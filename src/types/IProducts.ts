@@ -22,5 +22,6 @@ export interface IProduct {
   type: {
     main: FilterType;
     subtypes?: string[];
-  }
+  };
+  stock: boolean;
 }
