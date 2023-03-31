@@ -1,0 +1,32 @@
+@import "../../../scss/variables";
+
+.breadCrumbsContainer {
+  margin-top: 20px;
+}
+
+.link {
+  display: inline-block;
+  border-left: 1px dotted #000;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+.inActive {
+  pointer-events: none;
+  color: rgba($color: $fontPrimaryGrey, $alpha: 0.7) !important;
+}
+
+.backButtonContainer {
+  display: inline-flex;
+  align-items: center;
+}
+
+.button {
+  margin-right: 10px;
+}
+
+.backText {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+}

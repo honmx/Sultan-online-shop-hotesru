@@ -1,0 +1,14 @@
+@import "variables";
+
+* {
+  font-family: 'Inter', sans-serif !important;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, small, strike, strong, sub, sup, tt, b, u, li {
+  line-height: 125% !important;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}

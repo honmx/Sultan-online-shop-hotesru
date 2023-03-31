@@ -1,0 +1,71 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "title title sort sort"
+    "filterbar filterbar filterbar filterbar"
+    "sidebar products products products";
+  margin-top: 40px;
+  gap: 35px;
+}
+
+.title {
+  grid-area: title;
+}
+
+.sort {
+  grid-area: sort;
+  justify-self: end;
+  align-self: center;
+}
+
+.filterbar {
+  grid-area: filterbar;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.productsListContainer {
+  grid-area: products;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+@media screen and (max-width: 1023px) {
+  .container {
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "sidebar"
+      "filterbar"
+      "sort"
+      "products";
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .filterbar {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .sort {
+    justify-self: auto;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .container {
+    justify-items: start;
+    gap: 15px;
+  }
+}

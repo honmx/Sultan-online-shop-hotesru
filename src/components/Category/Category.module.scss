@@ -1,0 +1,36 @@
+@import "../../scss/variables.scss";
+
+.category {
+  overflow: hidden;
+}
+
+.imgWrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.imgWrapper img {
+  display: block;
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 500;
+  color: $fontPrimaryBlack;
+}
+
+@media screen and (max-width: 767px) {
+  .category:nth-last-child(1):nth-child(odd) {
+    grid-column: 1 / span 2;
+    grid-row: 1fr;
+    bottom: 50%;
+
+    .imgWrapper img {
+      object-fit: cover;
+      aspect-ratio: 1/0.5;
+    }
+  }
+}

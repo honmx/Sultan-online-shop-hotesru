@@ -1,0 +1,15 @@
+@import "../../../scss/variables.scss";
+
+.sort {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  margin-right: 5px;
+}
+
+.select {
+  border: 2px solid #fff;
+  padding: 5px 0;
+}

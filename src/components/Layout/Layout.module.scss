@@ -1,0 +1,19 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1366px;
+  width: 100%;
+  padding-inline: 15px;
+  margin-inline: auto;
+}
+
+@media screen and (max-width: 1439px) {
+  .container:nth-child(2) {
+    margin-top: 75px;
+  }
+}

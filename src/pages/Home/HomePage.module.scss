@@ -1,0 +1,21 @@
+.block {
+  margin-top: 100px;
+}
+
+.block:last-child {
+  margin-bottom: 100px;
+}
+
+.subtitle {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .block:first-child {
+    margin-top: 125px;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+}

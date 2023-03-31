@@ -1,0 +1,27 @@
+@import "../../../scss/variables.scss";
+
+.pagination {
+  display: flex;
+  align-items: center;
+
+  &>*:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.pages {
+  display: flex;
+  &>*:not(:last-child) {
+    margin-right: 2px;
+  }
+}
+
+.pageButton {
+  background-color: transparent;
+  color: $fontPrimaryGrey;
+}
+
+.activePage {
+  background-color: $accent;
+  color: $fontPrimaryWhite;
+}

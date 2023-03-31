@@ -1,0 +1,48 @@
+@import "../../../scss/variables.scss";
+
+.selectContainer {
+  &>*:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.text {
+  margin-left: 7px;
+}
+
+.name {}
+
+.toggle {
+  display: inline-block;
+  transition: all 0.15s ease;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: 1px solid $primaryGrey;
+  }
+}
+
+.title {
+  font-weight: 500;
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+.name {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.count {
+  color: $primaryGrey;
+  font-size: 12px;
+}

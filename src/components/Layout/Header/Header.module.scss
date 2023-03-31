@@ -1,0 +1,341 @@
+@import "../../../scss/variables.scss";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// ==========
+
+.subheader {
+  padding: 15px 0;
+}
+
+.companyInfoContainer {
+  display: flex;
+  margin-right: 35px;
+}
+
+.faq {
+  display: flex;
+  justify-content: space-between;
+  max-width: 425px;
+  width: 100%;
+}
+
+.link {
+  color: $fontPrimaryGrey;
+}
+
+@media screen and (max-width: 1439px) {
+  .subheader {
+    display: none;
+  }
+}
+
+// ==========
+
+.mainHeader {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba($color: $primaryGrey, $alpha: 0.2);
+  border-top: 1px solid rgba($color: $primaryGrey, $alpha: 0.2);
+}
+
+.catalogButton {}
+
+.searchInput {
+  position: relative;
+  padding-right: 70px;
+}
+
+.searchInput:focus {
+  border: 2px solid $primaryGrey;
+  outline: none;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+@media screen and (max-width: 1439px) {
+  .catalogButton {
+    position: absolute;
+    top: 120px;
+    left: 15px;
+  }
+
+  .inputContainer {
+    position: absolute;
+    top: 120px;
+    right: 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo {
+    width: 100px;
+  }
+
+  .catalogButton {
+    position: absolute;
+    top: 102px;
+  }
+
+  .catalogButton button {
+    padding-inline: 20px;
+  }
+
+  .inputContainer {
+    position: absolute;
+    top: 102px;
+  }
+
+  .searchInput {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .catalogButton button {
+    padding: 20px;
+  }
+}
+
+.searchButton {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  background-color: $accent;
+  border: none;
+  border-radius: 100vw;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.searchButton:hover {
+  border: 1px solid $primaryGrey;
+}
+
+.searchButton:active {
+  filter: brightness(75%);
+}
+
+
+.supportContainer {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 1439px) {
+  .supportContainer {
+    display: none;
+  }
+}
+
+.underscore {
+  text-decoration: underline;
+}
+
+.makeCall {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.title {
+  color: $fontPrimaryBlack;
+}
+
+.subtitle {
+  color: $fontPrimaryGrey;
+}
+
+.priceListButton {}
+
+@media screen and (max-width: 1439px) {
+  .priceListButton {
+    display: none !important;
+  }
+
+  .dividerLine {
+    display: none;
+  }
+}
+
+.cartContainer {
+  // position: fixed;
+  // z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.cartIconButton {
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cartIcon:hover {
+  background-color: rgba($color: $primaryGrey, $alpha: 0.1);
+}
+
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10%;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100vw;
+  background-color: $accent;
+  color: $fontPrimaryWhite;
+  outline: 3px solid $fontPrimaryWhite;
+}
+
+@media screen and (max-width: 767px) {
+
+  .cartContainer {
+    & img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .badge {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .cartText {
+    display: none;
+  }
+}
+
+.menu {
+  display: none !important;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.line {
+  background-color: #fff;
+  height: 2px;
+  width: 10px;
+}
+
+.line:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+.crossLine1 {
+  width: 16px;
+  rotate: 45deg;
+  position: relative;
+  top: 2.5px;
+}
+
+.crossLine2 {
+  width: 16px;
+  rotate: -45deg;
+  position: relative;
+  bottom: 2.5px;
+}
+
+@media screen and (max-width: 1439px) {
+  .menu {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.active {
+  display: block;
+}
+
+.notActive {
+  display: none;
+}
+
+// =============
+
+@media screen and (max-width: 1439px) {
+  .subheaderInMenu {
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 180px;
+    z-index: 1000;
+    padding-bottom: 350px;
+  }
+
+  .companyInfoContainer {
+    margin: 0;
+    width: calc(100vw - 30px);
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faq {
+    flex-direction: column;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0%;
+  }
+
+  .faqTitle {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  .link {
+    text-align: center;
+  }
+
+  .activePriceListButton {
+    width: 250px;
+    display: block !important;
+    position: absolute;
+    top: 685px;
+    left: 50%;
+    transform: translateX(-45%);
+    margin-bottom: 15px;
+    z-index: 1000;
+  }
+
+  .orderPhoneCall {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .phoneIconButton {
+    width: 35px;
+    height: 35px;
+    background-color: $accent;
+    border-radius: 100vw;
+    margin-right: 10px;
+    border: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .subheaderInMenu {
+    top: 165px;
+  }
+}

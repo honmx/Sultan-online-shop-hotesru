@@ -1,0 +1,33 @@
+@import "../../../../scss/variables.scss";
+
+.companyInfo {
+  display: flex;
+  align-items: center;
+}
+
+.companyInfo:not(:last-child) {
+  margin-right: 25px;
+}
+
+.textWrapper {
+  margin-left: 15px;
+}
+
+.title {
+  color: $fontPrimaryBlack;
+}
+
+.subtitle {
+  color: $fontPrimaryGrey;
+}
+
+@media screen and (max-width: 1439px) {
+  .companyInfo {
+    width: 290px;
+  }
+
+  .companyInfo:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}

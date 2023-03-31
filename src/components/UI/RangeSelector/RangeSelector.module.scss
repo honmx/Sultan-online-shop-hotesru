@@ -1,0 +1,23 @@
+@import "../../../scss/variables.scss";
+
+.name {
+  font-size: 14px;
+  font-weight: 300;
+  color: $fontPrimaryGrey;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 290px;
+
+  input {
+    background-color: rgba($color: $accent, $alpha: 0.35);
+    color: $fontPrimaryGrey;
+    border: none;
+    border-radius: 100vw;
+    padding: 5px 10px;
+    width: 100px;
+  }
+}

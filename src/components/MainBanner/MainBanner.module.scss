@@ -1,0 +1,165 @@
+@import "../../scss/variables.scss";
+
+.banner {
+  display: flex;
+  position: relative;
+  justify-content: center;
+
+  img {
+    aspect-ratio: 2.41;
+    width: 100vw;
+  }
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: $fontPrimaryWhite;
+  z-index: 0;
+  padding: 10px;
+}
+
+.glass {
+  position: absolute;
+  top: 0;
+  left: -292px;
+  bottom: 0;
+  right: 50%;
+  backdrop-filter: blur(5px);
+  z-index: -1;
+}
+
+.bannerText {
+  height: 70%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 3% 0;
+}
+
+.title {
+  font-size: 70px;
+  font-weight: 500;
+}
+
+.subtitle {
+  margin-top: 2%;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.button {
+  margin-top: 5%;
+  align-self: flex-start;
+}
+
+.tagContainer {
+  margin-top: 5%;
+  display: flex;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+}
+
+.tag:not(:last-child) {
+  margin-right: 35px;
+}
+
+.plus {}
+
+.tagText {
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1439px) {
+
+  .glass {
+    top: 15%;
+    left: 0;
+    right: 0;
+    bottom: 15%;
+  }
+
+  .bannerText {
+    height: 50%;
+    width: 100%;
+    text-align: center;
+    margin-top: 9%;
+  }
+
+  .button {
+    display: none;
+  }
+
+  .tagContainer {
+    margin-top: 15%;
+  }
+
+  .tag {
+    color: $fontPrimaryBlack;
+  }
+}
+
+
+@media screen and (max-width: 1023px) {
+  .title {
+    font-size: 45px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .banner {
+    margin-bottom: 120px;
+  }
+
+  .bannerText {
+    margin-top: 11%;
+  }
+
+  .tagContainer {
+    flex-direction: column;
+  }
+
+  .tag:not(:last-child) {
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .bannerText {
+    margin: 6% 0;
+  }
+
+  .tagContainer {
+    margin-top: 20%;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+  
+  .subtitle {
+    font-size: 12px;
+  }
+}

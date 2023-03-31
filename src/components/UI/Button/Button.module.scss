@@ -1,0 +1,27 @@
+@import "../../../scss/variables.scss";
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 55px;
+  background-color: $accent;
+  color: $fontPrimaryWhite;
+  border-radius: 100vw;
+  border: 2px solid transparent;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.button img {
+  position: relative;
+  display: inline-block;
+}
+
+.button:hover {
+  border: 2px solid $primaryGrey;
+}
+
+.button:active {
+  filter: brightness(75%);
+}
