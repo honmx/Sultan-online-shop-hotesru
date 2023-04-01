@@ -1,6 +1,7 @@
 @import "../../../scss/variables.scss";
 
 .button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,11 +31,4 @@
   background-color: $accent;
   color: $fontPrimaryWhite;
   outline: 3px solid $fontPrimaryWhite;
-}
-
-@media screen and (max-width: 767px) {
-  .badge {
-    width: 15px;
-    height: 15px;
-  }
 }

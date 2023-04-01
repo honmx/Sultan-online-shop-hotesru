@@ -1,0 +1,168 @@
+@import "../../../../scss/variables.scss";
+
+// ==========
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subheader {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba($color: $primaryGrey, $alpha: 0.2);
+}
+
+.companyInfoContainer {
+  display: flex;
+  margin-right: 35px;
+}
+
+.faq {
+  display: flex;
+  justify-content: space-between;
+  max-width: 425px;
+  width: 100%;
+}
+
+.link {
+  color: $fontPrimaryGrey;
+}
+
+// ==========
+
+.mainHeader {
+  padding-top: 20px;
+}
+
+.catalogButton {}
+
+.searchInput {
+  position: relative;
+  padding-right: 70px;
+}
+
+.searchInput:focus {
+  border: 2px solid $primaryGrey;
+  outline: none;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.searchButton {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  background-color: $accent;
+  border: none;
+  border-radius: 100vw;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.searchButton:hover {
+  border: 1px solid $primaryGrey;
+}
+
+.searchButton:active {
+  filter: brightness(75%);
+}
+
+
+.supportContainer {
+  display: flex;
+  align-items: center;
+}
+
+.underscore {
+  text-decoration: underline;
+}
+
+.makeCall {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.title {
+  color: $fontPrimaryBlack;
+}
+
+.subtitle {
+  color: $fontPrimaryGrey;
+}
+
+.priceListButton {}
+
+
+.cartContainer {
+  display: flex;
+  align-items: center;
+}
+
+.cartIconButton {
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  z-index: 1000;
+}
+
+.cartIcon:hover {
+  background-color: rgba($color: $primaryGrey, $alpha: 0.1);
+}
+
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10%;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100vw;
+  background-color: $accent;
+  color: $fontPrimaryWhite;
+  outline: 3px solid $fontPrimaryWhite;
+}
+
+.line {
+  background-color: #fff;
+  height: 2px;
+  width: 10px;
+}
+
+.line:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+.crossLine1 {
+  width: 16px;
+  rotate: 45deg;
+  position: relative;
+  top: 2.5px;
+}
+
+.crossLine2 {
+  width: 16px;
+  rotate: -45deg;
+  position: relative;
+  bottom: 2.5px;
+}
+
+.active {
+  display: block;
+}
+
+.notActive {
+  display: none;
+}
+
+// =============

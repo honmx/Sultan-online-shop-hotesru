@@ -19,6 +19,9 @@ import TextInput from "../../UI/Input/TextInput";
 import Button from "../../UI/Button/Button";
 import { useAppSelector } from "../../../store/hooks";
 import { countSummaryPrice } from "../../../helpers/countSummaryPrice";
+import { useSmallerDevice } from "../../../hooks/useSmallerDevice";
+import DesktopHeader from "./DesktopHeader/DesktopHeader";
+import MobileHeader from "./MobileHeader/MobileHeader";
 
 interface Props {
 
@@ -26,108 +29,13 @@ interface Props {
 
 const Header: FC<Props> = ({ }) => {
 
-  const [active, setActive] = useState(false);
-
-  const cartProducts = useAppSelector(state => state.cart.cartItems);
-
-  useEffect(() => {
-    const updateActive = () => {
-      if (window.innerWidth >= 1440) setActive(false);
-    }
-
-    window.addEventListener('resize', updateActive);
-    updateActive();
-
-    return () => window.removeEventListener('resize', updateActive);
-  }, []);
-
-  const toggleActive = () => {
-    setActive(prev => !prev);
-  }
+  const [smallerDevice] = useSmallerDevice(1439);
 
   return (
     <header className={s.headerContainer}>
-      <div className={`${s.subheader} ${active && s.active} ${active && s.subheaderInMenu}`}>
-        <div className={`${s.container} container`}>
-          <div className={s.companyInfoContainer}>
-            <CompanyInfo src={location} title="г. Кокчетав, ул. Ж. Ташенова 129Б" subtitle="(Рынок Восточный)" />
-            <CompanyInfo src={mail} title="opt.sultan@mail.ru " subtitle="На связи в любое время" />
-            {
-              active &&
-              <>
-                <CompanyInfo src={phone} title="Отдел продаж" subtitle="+7 (777) 490-00-91" />
-                <p className={s.subtitle}>время работы: 9:00-20:00</p>
-              </>
-            }
-            {
-              active &&
-              <div className={s.orderPhoneCall}>
-                <Button img={phone2} className={s.phoneIconButton} p="0px"></Button>
-                <p className={s.phoneCallText}>Заказать звонок</p>
-              </div>
-            }
-          </div>
-          <div className={s.faq}>
-            {
-              active &&
-              <p className={s.faqTitle}>Меню сайта:</p>
-            }
-            <NavLink to="/about" className={`${s.link} link`} onClick={toggleActive}>О компании</NavLink>
-            <NavLink to="/payment-delivery" className={`${s.link} link`}>Оплата и доставка</NavLink>
-            <NavLink to="/refund" className={`${s.link} link`}>Возврат</NavLink>
-            <NavLink to="/contacts" className={`${s.link} link`}>Контакты</NavLink>
-          </div>
-        </div>
-      </div>
-      <div className={s.mainHeader}>
-        <div className={`${s.container} container`}>
-          <Button className={s.menu} onClick={toggleActive} p="0px">
-            {
-              active ? (
-                <>
-                  <div className={`${s.line} ${s.crossLine1}`} />
-                  <div className={`${s.line} ${s.crossLine2}`} />
-                </>
-              ) : (
-                <>
-                  <div className={s.line} />
-                  <div className={s.line} />
-                  <div className={s.line} />
-                </>
-              )
-            }
-          </Button>
-          <NavLink to="/">
-            <img src={logo} alt="logo" className={s.logo} />
-          </NavLink>
-          <NavLink to="/catalog" className={`${s.catalogButton} link`}>
-            <Button img={frame}>Каталог</Button>
-          </NavLink>
-          <div className={s.inputContainer}>
-            <TextInput placeholder="Поиск..." className={s.searchInput} />
-            <Button img={search} className={s.searchButton} p="0"></Button>
-          </div>
-          <div className={s.supportContainer}>
-            <div className={s.textWrapper}>
-              <p className={s.title}>+7 (777) 490-00-91</p>
-              <p className={s.subtitle}>время работы: 9:00-20:00</p>
-              <button className={`${s.subtitle} ${s.underscore} ${s.makeCall}`}>Заказать звонок</button>
-            </div>
-            <img src={operator} alt="operator" />
-          </div>
-          <Button img={download} className={`${s.priceListButton} ${active && s.activePriceListButton}`}>Прайс-лист</Button>
-          <img src={line} alt="line" className={s.dividerLine} />
-          <div className={s.cartContainer}>
-            <Link to="/cart" className={`${s.cartIconButton} link`}>
-              <IconButton img={cart} badge={cartProducts.length} />
-            </Link>
-            <div className={`${s.textWrapper} ${s.cartText}`}>
-              <p className={s.subtitle}>Корзина</p>
-              <p className={s.title}>{cartProducts.length > 0 ? countSummaryPrice(cartProducts) : ""}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {
+        smallerDevice ? <MobileHeader /> : <DesktopHeader />
+      }
     </header>
   )
 };

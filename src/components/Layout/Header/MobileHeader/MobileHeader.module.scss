@@ -1,0 +1,105 @@
+@import "../../../../scss/variables.scss";
+
+.mainHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.line,
+.crossLine {
+  width: 18px;
+  height: 3px;
+  border-radius: 100vw;
+  background-color: #fff;
+}
+
+.line:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.crossLine {
+  width: 25px;
+  position: absolute;
+}
+
+.crossLine:nth-child(1) {
+  top: 22px;
+  left: 12px;
+  rotate: 45deg;
+}
+
+.crossLine:nth-child(2) {
+  top: 22px;
+  left: 12px;
+  rotate: -45deg;
+}
+
+@media screen and (max-width: 424px) {
+  .logoWrapper {
+    & img {
+      width: 100px;
+    }
+  }
+}
+
+// ==========
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba($color: $primaryGrey, $alpha: 0.2);
+  color: $fontPrimaryGrey;
+  font-size: 12px;
+  font-weight: 600;
+
+  &>* {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    padding: 20px;
+
+    &:not(:last-child) {
+      border-right: 1px dotted rgba($color: $primaryGrey, $alpha: 0.2);
+    }
+  }
+}
+
+.catalogText {
+  margin-left: 5px;
+}
+
+.inputContainer {
+  position: relative;
+
+  & img,
+  & .inputText {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  & img {
+    left: 20%;
+  }
+
+  & .inputText {
+    left: 35%;
+  }
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
