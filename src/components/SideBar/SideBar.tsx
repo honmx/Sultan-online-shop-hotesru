@@ -44,7 +44,6 @@ const SideBar: FC<Props> = ({ className, products, categoryType }) => {
   }
 
   const clearFilters = () => {
-    dispatch(clearAllFilters());
     setMin(0);
     setMax(10000);
     setSelectedProducers([]);

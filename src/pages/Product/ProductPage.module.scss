@@ -35,6 +35,7 @@
   font-size: 30px;
   font-weight: 500;
   color: $fontPrimaryBlack;
+  margin-right: 10px;
 }
 
 .secondaryName {
@@ -102,6 +103,7 @@
 
 .bold {
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .priceList {
@@ -126,6 +128,7 @@
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 15px;
+
   & span {
     font-size: 10px;
   }
@@ -152,7 +155,8 @@
   border-bottom: 1px dotted $primaryGrey;
 }
 
-.options, .description {
+.options,
+.description {
   cursor: pointer;
 }
 
@@ -162,4 +166,52 @@
 
 .notStock {
   color: $red;
+}
+
+@media screen and (max-width: 1439px) {
+  .price {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .buttonsContainer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "price quantity"
+      "cart share"
+      "announce announce"
+      "price-list price-list";
+
+    .price,
+    .cart {
+      justify-self: start;
+    }
+    .changeQuantityContainer,
+    .share {
+      justify-self: end;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+
+    &>* {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .productImgWrapper {
+    margin-right: 0;
+    max-height: none;
+  }
+  
+  .cart {
+    padding: 10px 20px;
+  }
 }

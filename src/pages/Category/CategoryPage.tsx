@@ -41,6 +41,7 @@ const CategoryPage: FC<Props> = ({ }) => {
 
   const sort = useAppSelector(state => state.category.sort);
   const selectedFilters = useAppSelector(state => state.category.filters);
+  const priceRange = useAppSelector(state => state.category.selectors.price);
   const selectedProducers = useAppSelector(state => state.category.selectors.producer);
   const selectedBrands = useAppSelector(state => state.category.selectors.brand);
 
@@ -53,6 +54,9 @@ const CategoryPage: FC<Props> = ({ }) => {
         return selectedFilters.length === 0
           ? true
           : product.type.subtypes?.some(elem => selectedFilters.includes(elem));
+      })
+      .filter(product => {
+        return product.price.value >= priceRange.min && product.price.value <= priceRange.max;
       })
       .filter(product => {
         return selectedProducers.length === 0
@@ -69,7 +73,7 @@ const CategoryPage: FC<Props> = ({ }) => {
   // ====
 
   useEffect(() => {
-    
+
   }, []);
 
   // ===

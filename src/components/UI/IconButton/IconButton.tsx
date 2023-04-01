@@ -13,6 +13,7 @@ interface Props {
 }
 
 const IconButton: FC<Props> = ({ img, p, tt, ar, w, className, badge, onClick }) => {
+
   return (
     <button
       className={`${className} ${s.button}`}
@@ -24,8 +25,11 @@ const IconButton: FC<Props> = ({ img, p, tt, ar, w, className, badge, onClick })
       }}
       onClick={onClick && onClick}
     >
-      { img && <img src={img} /> }
-      { badge && <div className={s.badge}>3</div> }
+      {img && <img src={img} />}
+      {
+        !!badge &&
+        <div className={s.badge}>{badge}</div>
+      }
     </button>
   )
 };

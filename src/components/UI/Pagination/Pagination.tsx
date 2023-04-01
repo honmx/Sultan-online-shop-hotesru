@@ -16,9 +16,12 @@ const Pagination: FC<Props> = ({ countOfPages, currentPage, setPage, className }
 
   // countOfPages = 10;
 
+  
   useEffect(() => {
     if (currentPage >= countOfPages) setPage(0);
   }, [countOfPages]);
+  
+  if (countOfPages === 1) return null;
 
   return (
     <div className={`${s.pagination} ${className}`}>

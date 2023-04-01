@@ -19,6 +19,18 @@
   width: 100%;
 }
 
+.stock {
+  font-size: 12px;
+}
+
+.inStock {
+  color: $green;
+}
+
+.notInStock {
+  color: $red;
+}
+
 .capacity {
   display: flex;
   align-items: center;

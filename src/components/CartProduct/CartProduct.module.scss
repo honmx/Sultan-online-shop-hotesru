@@ -1,0 +1,95 @@
+@import "../../scss/variables.scss";
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px dotted $primaryGrey;
+
+  &>*:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.imgWrapper {
+  width: 250px;
+
+  & img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.text {
+  max-width: 350px;
+
+  &>*:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.capacity {}
+
+.capacityText {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+
+  &>*:not(:last-child) {
+    margin-right: 35px;
+  }
+}
+
+.changeQuantityContainer {
+  display: flex;
+  align-items: center;
+
+  &>*:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.trash {
+  width: 50px;
+  padding: 0;
+  aspect-ratio: 1;
+}
+
+@media screen and (max-width: 1023px) {
+  .product {
+    flex-direction: column;
+    align-items: center;
+
+    &>*:not(:last-child) {
+      margin-right: 0 ;
+    }
+  }
+
+  .text {
+    max-width: 700px;
+  }
+
+  .buttonsContainer {
+    margin-top: 10px;
+  }
+}

@@ -597,30 +597,6 @@
       "type": {
         "main": "household-chemicals"
       },
-      "stock": true
-    },
-    {
-      "id": 1341233124561,
-      "name": {
-        "main": "AOS",
-        "secondary": "средство для мытья посуды Crystal"
-      },
-      "url": "",
-      "capacity": {
-        "value": "450",
-        "type": "мл"
-      },
-      "barcode": 1341233124561,
-      "producer": "Нэфис",
-      "brand": "AOS",
-      "description": "Voluptates ullam quasi quibusdam qui ab nulla, architecto fugit provident in voluptate incidunt alias et nesciunt debitis laboriosam est vel ducimus deserunt?",
-      "price": {
-        "value": 43.25,
-        "currency": "₸"
-      },
-      "type": {
-        "main": "household-chemicals"
-      },
       "stock": false
     }
   ]

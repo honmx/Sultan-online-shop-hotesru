@@ -3,7 +3,7 @@ import s from "./Subtitle.module.scss";
 
 interface Props {
   children: ReactNode;
-  className: string;
+  className?: string;
 }
 
 const Subtitle: FC<Props> = ({ children, className }) => {

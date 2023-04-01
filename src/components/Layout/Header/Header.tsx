@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../../../scss/common.scss";
 import s from "./Header.module.scss";
 import CompanyInfo from "./CompanyInfo/CompanyInfo";
@@ -17,7 +17,8 @@ import operator from "../../../assets/operator.png";
 import IconButton from "../../UI/IconButton/IconButton";
 import TextInput from "../../UI/Input/TextInput";
 import Button from "../../UI/Button/Button";
-import { Link } from "react-scroll";
+import { useAppSelector } from "../../../store/hooks";
+import { countSummaryPrice } from "../../../helpers/countSummaryPrice";
 
 interface Props {
 
@@ -26,6 +27,8 @@ interface Props {
 const Header: FC<Props> = ({ }) => {
 
   const [active, setActive] = useState(false);
+
+  const cartProducts = useAppSelector(state => state.cart.cartItems);
 
   useEffect(() => {
     const updateActive = () => {
@@ -40,11 +43,6 @@ const Header: FC<Props> = ({ }) => {
 
   const toggleActive = () => {
     setActive(prev => !prev);
-  }
-
-  const scroll = () => {
-    const catalog = document.getElementById("catalog");
-    catalog?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
@@ -120,10 +118,12 @@ const Header: FC<Props> = ({ }) => {
           <Button img={download} className={`${s.priceListButton} ${active && s.activePriceListButton}`}>Прайс-лист</Button>
           <img src={line} alt="line" className={s.dividerLine} />
           <div className={s.cartContainer}>
-            <IconButton img={cart} badge={3} className={s.cartIconButton} />
+            <Link to="/cart" className={`${s.cartIconButton} link`}>
+              <IconButton img={cart} badge={cartProducts.length} />
+            </Link>
             <div className={`${s.textWrapper} ${s.cartText}`}>
               <p className={s.subtitle}>Корзина</p>
-              <p className={s.title}>12 478 ₸</p>
+              <p className={s.title}>{cartProducts.length > 0 ? countSummaryPrice(cartProducts) : ""}</p>
             </div>
           </div>
         </div>

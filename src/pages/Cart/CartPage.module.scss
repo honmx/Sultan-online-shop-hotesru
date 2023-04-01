@@ -1,0 +1,29 @@
+.cart {
+  margin: 35px 0;
+}
+
+.title {
+  margin-bottom: 25px;
+}
+
+.noProducts {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.cartFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 424px) {
+  .offer {
+    padding: 15px 20px;
+  }
+}
