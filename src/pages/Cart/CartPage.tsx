@@ -2,13 +2,11 @@ import React, { FC, useState } from "react";
 import CartProduct from "../../components/CartProduct/CartProduct";
 import Title from "../../components/UI/Title/Title";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import s from "./CartPage.module.scss";
-import { getCartItemsFromLocalStorage } from "../../helpers/getCartItemsFromLocalStorage";
 import Button from "../../components/UI/Button/Button";
 import { countSummaryPrice } from "../../helpers/countSummaryPrice";
 import { clearCart } from "../../store/slices/cartSlice";
-import { Link } from "react-router-dom";
 import Notification from "../../components/Notification/Notification";
+import s from "./CartPage.module.scss";
 
 interface Props {
 

@@ -1,0 +1,77 @@
+@import "../../scss/variables.scss";
+
+.product {
+  display: flex;
+  position: relative;
+  padding: 0 20px 20px;
+  padding-right: 40px;
+  border-bottom: 1px solid $primaryGrey;
+
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  &:hover {
+    .edit {
+      display: block;
+    }
+  }
+}
+
+.imgWrapper {
+
+  & img {
+    width: 200px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .product p {
+    font-size: 12px;
+  }
+  .imgWrapper {
+    & img {
+      width: 150px;
+    }
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .imgWrapper {
+    & img {
+      width: 100px;
+    }
+  }
+}
+
+.textWrapper {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &>* {
+    font-size: 18px;
+
+    &:not(:last-child) {
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+      border-bottom: 1px dotted $primaryGrey;
+    }
+  }
+}
+
+.types {
+  &>* {
+    margin-bottom: 5px;
+    margin-right: 5px;
+  }
+}
+
+.edit {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

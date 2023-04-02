@@ -1,0 +1,12 @@
+@import "../../../scss/variables.scss";
+
+.footer {
+  padding: 50px 0;
+  color: $fontPrimaryWhite;
+}
+
+@media screen and (max-width: 1439px) {
+  .footer {
+    padding: 15px 0;
+  }
+}

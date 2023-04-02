@@ -12,7 +12,6 @@ import s from "./ProductPage.module.scss";
 import IconButton from "../../components/UI/IconButton/IconButton";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { addProduct } from "../../store/slices/cartSlice";
-import { IProduct } from "../../types/IProducts";
 import { useCartProduct } from "../../hooks/useCartProduct";
 import { setCartItemsToLocalStorage } from "../../helpers/setCartItemsToLocalStorage";
 

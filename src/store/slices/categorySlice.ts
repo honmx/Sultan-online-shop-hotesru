@@ -1,7 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { filters } from "../../helpers/data/filters";
 import { sortOptionsType } from "../../helpers/data/sortOptions";
-import { FilterType } from "../../types/FilterType";
 
 interface ICategorySlice {
   sort: keyof sortOptionsType,
@@ -19,7 +17,6 @@ interface ICategorySlice {
 const categorySlice = createSlice({
   name: "category",
   initialState: {
-    // type: "",
     sort: "name up",
     filters: [],
     selectors: {

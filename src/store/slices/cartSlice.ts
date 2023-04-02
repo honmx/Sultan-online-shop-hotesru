@@ -1,8 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IProduct } from "../../types/IProducts";
 import { getCartItemsFromLocalStorage } from "../../helpers/getCartItemsFromLocalStorage";
 import { CartProductType } from "../../types/CartProductType";
-import { setCartItemsToLocalStorage } from "../../helpers/setCartItemsToLocalStorage";
 
 
 

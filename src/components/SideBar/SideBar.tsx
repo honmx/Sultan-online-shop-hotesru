@@ -13,7 +13,7 @@ import { useSmallerDevice } from "../../hooks/useSmallerDevice";
 import arrowDown from "../../assets/arrow-down.svg";
 import arrowLeft from "../../assets/arrow-left.svg";
 import s from "./SideBar.module.scss";
-import { clearAllFilters, setBrands, setPrice, setProducers } from "../../store/slices/categorySlice";
+import { setBrands, setPrice, setProducers } from "../../store/slices/categorySlice";
 
 interface Props {
   className?: string;

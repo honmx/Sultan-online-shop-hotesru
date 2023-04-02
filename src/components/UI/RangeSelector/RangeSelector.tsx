@@ -1,5 +1,4 @@
 import React, { ChangeEvent, Dispatch, FC, SetStateAction } from "react";
-import { useAppDispatch } from "../../../store/hooks";
 import s from "./RangeSelector.module.scss";
 
 interface Props {

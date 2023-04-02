@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, MouseEvent, SetStateAction } from "react";
+import React, { FC } from "react";
 import { useAppDispatch } from "../../store/hooks";
 import { toggleFilter } from "../../store/slices/categorySlice";
 import s from "./FilterBar.module.scss";

@@ -1,7 +1,6 @@
-import React, { Dispatch, FC, FormEvent, SetStateAction, useEffect, useMemo, useState } from "react";
+import React, { Dispatch, FC, SetStateAction, useEffect, useMemo, useState } from "react";
 import { countAppearings } from "../../../helpers/countAppearings";
-import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-// import { toggleBrand, toggleProducer } from "../../../store/slices/categorySlice";
+import { useAppSelector } from "../../../store/hooks";
 import TextInput from "../Input/TextInput";
 import s from "./SelectSelector.module.scss";
 

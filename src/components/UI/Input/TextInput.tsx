@@ -4,7 +4,6 @@ import s from "./TextInput.module.scss";
 interface Props {
   placeholder?: string;
   className?: string;
-  //remove optional
   value?: string;
   setValue?: Dispatch<SetStateAction<string>>;
 }

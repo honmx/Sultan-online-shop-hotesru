@@ -1,11 +1,10 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import { useSmallerDevice } from "../../../hooks/useSmallerDevice";
-import IconButton from "../IconButton/IconButton";
 import arrowLeft from "../../../assets/arrow-left.svg";
 import s from "./BreadCrumbs.module.scss";
 import Button from "../Button/Button";
-import { useGetProductQuery, useGetProductsQuery } from "../../../store/slices/apiSlice";
+import { useGetProductsQuery } from "../../../store/slices/apiSlice";
 
 interface Props {
   href: string

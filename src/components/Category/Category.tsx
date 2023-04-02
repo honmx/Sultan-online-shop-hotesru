@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { NavLink } from "react-router-dom";
 import { CategoryType } from "../../helpers/data/categories";
-import { useGetProductsQuery } from "../../store/slices/apiSlice";
 import s from "./Category.module.scss";
 
 interface Props {
@@ -9,8 +8,6 @@ interface Props {
 }
 
 const Category: FC<Props> = ({ category }) => {
-
-  // const { data: products } = useGetProductsQuery();
 
   return (
     <div className={s.category}>

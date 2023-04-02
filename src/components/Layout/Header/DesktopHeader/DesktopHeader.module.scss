@@ -32,7 +32,7 @@
 // ==========
 
 .mainHeader {
-  padding-top: 20px;
+  padding: 15px 0;
 }
 
 .catalogButton {}
@@ -78,6 +78,13 @@
 .supportContainer {
   display: flex;
   align-items: center;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 10px;
 }
 
 .underscore {

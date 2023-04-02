@@ -1,14 +1,13 @@
 import React, { FC } from "react";
-import { Outlet, Route, Routes } from "react-router-dom";
-import s from "./App.module.scss";
+import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
-import AboutPage from "./pages/About/AboutPage";
 import CartPage from "./pages/Cart/CartPage";
 import CatalogPage from "./pages/Catalog/CatalogPage";
-import CatalogItemPage from "./pages/CatalogItem/CatalogItemPage";
 import CategoryPage from "./pages/Category/CategoryPage";
 import HomePage from "./pages/Home/HomePage";
 import ProductPage from "./pages/Product/ProductPage";
+import AdminPage from "./pages/Admin/AdminPage";
+import s from "./App.module.scss";
 
 const App: FC = ({ }) => {
   return (
@@ -23,7 +22,11 @@ const App: FC = ({ }) => {
             <Route path=":id" element={<ProductPage />} />
           </Route>
         </Route>
-        <Route path="/about" element={<AboutPage />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/about" element={<p>about</p>} />
+        <Route path="/payment-and-delivery" element={<p>payment and delivery</p>} />
+        <Route path="/refund" element={<p>refund</p>} />
+        <Route path="/contacts" element={<p>contacts</p>} />
       </Route>
     </Routes>
   )

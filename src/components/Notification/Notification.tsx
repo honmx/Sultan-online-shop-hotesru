@@ -1,4 +1,4 @@
-import React, { Dispatch, MouseEvent, FC, SetStateAction } from "react";
+import React, { MouseEvent, FC } from "react";
 import Title from "../UI/Title/Title";
 import Subtitle from "../UI/Subtitle/Subtitle";
 import IconButton from "../UI/IconButton/IconButton";

@@ -14,9 +14,6 @@ interface Props {
 
 const Pagination: FC<Props> = ({ countOfPages, currentPage, setPage, className }) => {
 
-  // countOfPages = 10;
-
-  
   useEffect(() => {
     if (currentPage >= countOfPages) setPage(0);
   }, [countOfPages]);

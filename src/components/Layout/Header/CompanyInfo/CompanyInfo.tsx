@@ -6,11 +6,12 @@ interface Props {
   src: string;
   title: string;
   subtitle: string;
+  className?: string;
 }
 
-const CompanyInfo: FC<Props> = ({ src, title, subtitle }) => {
+const CompanyInfo: FC<Props> = ({ src, title, subtitle, className }) => {
   return (
-    <div className={s.companyInfo}>
+    <div className={`${s.companyInfo} ${className}`}>
       <img src={src} alt="icon" />
       <div className={s.textWrapper}>
         <p className={s.title}>{ title }</p>

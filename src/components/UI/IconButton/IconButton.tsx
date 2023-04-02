@@ -1,4 +1,4 @@
-import React, { FC, MouseEvent, ReactNode } from "react";
+import React, { FC, MouseEvent } from "react";
 import s from "./IconButton.module.scss";
 
 interface Props {

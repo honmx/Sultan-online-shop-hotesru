@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CompanyInfo from "../CompanyInfo/CompanyInfo";
 import location from "../../../../assets/location.svg";
 import mail from "../../../../assets/mail.svg";
@@ -7,7 +7,6 @@ import logo from "../../../../assets/logo.svg";
 import frame from "../../../../assets/frame.svg";
 import cart from "../../../../assets/cart.svg";
 import search from "../../../../assets/search.svg";
-import download from "../../../../assets/download.svg";
 import operator from "../../../../assets/operator.png";
 import IconButton from "../../../UI/IconButton/IconButton";
 import TextInput from "../../../UI/Input/TextInput";
@@ -34,21 +33,21 @@ const DesktopHeader: FC<Props> = ({ }) => {
             <CompanyInfo src={mail} title="opt.sultan@mail.ru " subtitle="На связи в любое время" />
           </div>
           <div className={s.faq}>
-            <NavLink to="/about" className={`${s.link} link`}>О компании</NavLink>
-            <NavLink to="/payment-delivery" className={`${s.link} link`}>Оплата и доставка</NavLink>
-            <NavLink to="/refund" className={`${s.link} link`}>Возврат</NavLink>
-            <NavLink to="/contacts" className={`${s.link} link`}>Контакты</NavLink>
+            <Link to="/about" className={`${s.link} link`}>О компании</Link>
+            <Link to="/payment-and-delivery" className={`${s.link} link`}>Оплата и доставка</Link>
+            <Link to="/refund" className={`${s.link} link`}>Возврат</Link>
+            <Link to="/contacts" className={`${s.link} link`}>Контакты</Link>
           </div>
         </div>
       </div>
       <div className={s.mainHeader}>
         <div className={`${s.container} container`}>
-          <NavLink to="/">
+          <Link to="/">
             <img src={logo} alt="logo" className={s.logo} />
-          </NavLink>
-          <NavLink to="/catalog" className={`${s.catalogButton} link`}>
+          </Link>
+          <Link to="/catalog" className={`${s.catalogButton} link`}>
             <Button img={frame}>Каталог</Button>
-          </NavLink>
+          </Link>
           <div className={s.inputContainer}>
             <TextInput placeholder="Поиск..." className={s.searchInput} />
             <Button img={search} className={s.searchButton} p="0"></Button>
@@ -61,7 +60,9 @@ const DesktopHeader: FC<Props> = ({ }) => {
             </div>
             <img src={operator} alt="operator" />
           </div>
-          <Button img={download} className={`${s.priceListButton}`}>Прайс-лист</Button>
+          <Link to="/admin" className={`${s.priceListButton} link`}>
+            <Button>Админ</Button>
+          </Link>
           <div className={s.cartContainer}>
             <Link to="/cart" className={`${s.cartIconButton} link`}>
               <IconButton img={cart} badge={cartProducts.length} />

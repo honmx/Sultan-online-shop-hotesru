@@ -1,0 +1,36 @@
+@import "../../scss/variables.scss";
+
+.label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+}
+
+.description {
+  height: 200px;
+  border-radius: 35px !important;
+  resize: none;
+}
+
+.priceContainer {
+  display: flex;
+
+  & .priceValueInput {
+    width: 100%;
+    margin-right: 25px;
+  }
+}
+
+.currencyContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+
+  & select {
+    height: 30px;
+  }
+}

@@ -70,14 +70,6 @@ const CategoryPage: FC<Props> = ({ }) => {
       })
   }, [currentCategoryProducts, sort, selectedFilters, selectedProducers, selectedBrands]);
 
-  // ====
-
-  useEffect(() => {
-
-  }, []);
-
-  // ===
-
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [page]);

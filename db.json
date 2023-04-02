@@ -9,14 +9,14 @@
       "url": "https://img.fix-price.com/800x800/images/origin/origin/1f7cfe54b85f1cd69dd4c736604fac83.jpg",
       "capacity": {
         "value": "80",
-        "type": "г"
+        "type": ""
       },
       "barcode": 3122156,
       "producer": "Splat",
       "brand": "Splat",
       "description": "Зубная паста, Splat – отличный выбор для комплексного ухода за полостью рта. Натуральные ингредиенты обеспечивают надежную защиту десен и зубов, а инновационная система безопасно отбеливает и полирует эмаль до блеска. Товар представлен в ассортименте.",
       "price": {
-        "value": 48.76,
+        "value": 73.22,
         "currency": "₸"
       },
       "type": {
@@ -117,14 +117,14 @@
       "url": "https://img.fix-price.com/800x800/images/origin/origin/ecb210866e3ad8c477aeaf402a8647d4.jpg",
       "capacity": {
         "value": "60",
-        "type": "г"
+        "type": ""
       },
       "barcode": 3114073,
       "producer": "Ёлочка",
       "brand": "Ёлочка",
       "description": "Мыло фигурное 'Ёлочка' дополнит новогодний подарок. Имеет оригинальную форму, праздничную упаковку и приятный аромат. Масса нетто: 60 г.",
       "price": {
-        "value": 48.76,
+        "value": 58.76,
         "currency": "₸"
       },
       "type": {
@@ -320,14 +320,14 @@
       "url": "https://img.fix-price.com/800x800/images/origin/origin/5273cfb88e45db9c16831d8a311c79d8.jpg",
       "capacity": {
         "value": "1.5",
-        "type": "л"
+        "type": ""
       },
       "barcode": 3211209,
       "producer": "Premium Quality",
       "brand": "Premium Quality",
       "description": "Мыло жидкое, Premium Quality, не только бережно очищает кожу, но и дарит ей интенсивное увлажнение и нежный аромат. Идеально подходит для ежедневного применения. Объём: 1,5 л. Товар представлен в ассортименте.",
       "price": {
-        "value": 48.76,
+        "value": 148.76,
         "currency": "₸"
       },
       "type": {
@@ -480,60 +480,12 @@
       "stock": true
     },
     {
-      "id": 4604049097548,
-      "name": {
-        "main": "BioMio BIO-SOAP",
-        "secondary": "Экологичное туалетное мыло. Литсея и бергамот"
-      },
-      "url": "",
-      "capacity": {
-        "value": "90",
-        "type": "г"
-      },
-      "barcode": 4604049097548,
-      "producer": "BioMio",
-      "brand": "BioMio",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
-      "price": {
-        "value": 48.76,
-        "currency": "₸"
-      },
-      "type": {
-        "main": "household-chemicals"
-      },
-      "stock": true
-    },
-    {
-      "id": 8938948539485,
-      "name": {
-        "main": "AOS",
-        "secondary": "Средство для мытья посуды Апельсин+мята"
-      },
-      "url": "",
-      "capacity": {
-        "value": "450",
-        "type": "мл"
-      },
-      "barcode": 8938948539485,
-      "producer": "Нэфис",
-      "brand": "AOS",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae maxime earum nam nesciunt! Dolor totam atque earum unde, labore maiores! Quia quas eaque libero aliquid!",
-      "price": {
-        "value": 43.25,
-        "currency": "₸"
-      },
-      "type": {
-        "main": "household-chemicals"
-      },
-      "stock": true
-    },
-    {
       "id": 2938120132885,
       "name": {
         "main": "ARIEL",
         "secondary": "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник"
       },
-      "url": "",
+      "url": "https://professionalnayhimiya.ru/7700-thickbox_default/kapsuly-dlya-stirki-ariel-pods-15sht-kh-288g-gornyj-rodnik-avtomat.jpg",
       "capacity": {
         "value": "15x28",
         "type": "г"
@@ -557,7 +509,7 @@
         "main": "BIMAX",
         "secondary": "Порошок стиральный Автомат 100 пятен COMPACT"
       },
-      "url": "",
+      "url": "https://usluga-vsem.ru/wp-content/uploads/3/d/9/3d914ae96a09be50d394a17aa8d6db3d.jpeg",
       "capacity": {
         "value": "1500",
         "type": "г"
@@ -567,37 +519,13 @@
       "brand": "BIMAX",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ullam quasi quibusdam qui ab nulla, architecto fugit provident in voluptate incidunt alias et nesciunt debitis laboriosam est vel ducimus deserunt?",
       "price": {
-        "value": 102.50,
+        "value": 102.5,
         "currency": "₸"
       },
       "type": {
         "main": "household-chemicals"
       },
       "stock": true
-    },
-    {
-      "id": 1341233124561,
-      "name": {
-        "main": "AOS",
-        "secondary": "средство для мытья посуды Crystal"
-      },
-      "url": "",
-      "capacity": {
-        "value": "450",
-        "type": "мл"
-      },
-      "barcode": 1341233124561,
-      "producer": "Нэфис",
-      "brand": "AOS",
-      "description": "Voluptates ullam quasi quibusdam qui ab nulla, architecto fugit provident in voluptate incidunt alias et nesciunt debitis laboriosam est vel ducimus deserunt?",
-      "price": {
-        "value": 43.25,
-        "currency": "₸"
-      },
-      "type": {
-        "main": "household-chemicals"
-      },
-      "stock": false
     }
   ]
 }

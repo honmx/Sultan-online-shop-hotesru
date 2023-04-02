@@ -57,6 +57,7 @@
 .buttonsContainer {
   display: flex;
   justify-content: center;
+  position: relative;
   border-top: 1px solid rgba($color: $primaryGrey, $alpha: 0.2);
   color: $fontPrimaryGrey;
   font-size: 12px;
@@ -69,7 +70,7 @@
     width: 140px;
     padding: 20px;
 
-    &:not(:last-child) {
+    &:nth-child(1) {
       border-right: 1px dotted rgba($color: $primaryGrey, $alpha: 0.2);
     }
   }
@@ -102,4 +103,60 @@
   width: 100%;
   height: 100%;
   border: none;
+}
+
+// ====
+
+.menuOpen {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: -15px;
+  width: 100vw;
+  background-color: #fff;
+  z-index: 10000;
+}
+
+.companyInfo p {
+  // text-align: center;
+}
+
+.orderCallContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.orderCallButton {
+  padding: 10px;
+}
+
+.orderCallText {
+  margin-left: 5px;
+}
+
+.navigation {
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px dotted rgba($color: $primaryGrey, $alpha: 0.2);
+
+  &>* {
+    display: block;
+    margin-bottom: 15px;
+  }
+}
+
+.navigationTitle {
+  font-size: 20px !important;
+}
+
+.background {
+  position: absolute;
+  top: 100%;
+  left: -15px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: #000000, $alpha: 0.75);
 }

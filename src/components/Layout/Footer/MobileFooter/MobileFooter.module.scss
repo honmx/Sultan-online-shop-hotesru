@@ -1,0 +1,85 @@
+.container {}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.description {
+  margin: 15px 0;
+}
+
+.subscribe {
+  margin-bottom: 10px;
+}
+
+.input {
+  margin-bottom: 30px;
+}
+
+.linksContainer {
+  display: grid;
+  grid-template-areas:
+    "menu categories"
+    "contacts contacts"
+}
+
+.navigation {
+  grid-area: menu;
+  margin-bottom: 35px;
+  margin-right: 20px;
+}
+
+.categories {
+  grid-area: categories;
+}
+
+.contacts {
+  grid-area: contacts;
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+
+  &>*:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.contacts {
+  .title {
+    margin-top: 30px;
+  }
+}
+
+.contactsWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.number, .workHours, .orderCall {
+  margin-bottom: 5px;
+}
+
+.mail {
+  margin-top: 25px;
+}
+
+.cards, .messengers {
+  margin-top: 15px;
+}
+
+.title {
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 424px) {
+  .adminButton {
+    padding: 10px 20px;
+  }
+}
