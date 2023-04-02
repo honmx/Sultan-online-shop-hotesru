@@ -15,7 +15,9 @@ const filters = {
   "household-chemicals": [
     "Бытовая химия"
   ],
-  // 
+  "products-for-home": ["Товары для дома"],
+  "products-for-mothers-and-children": ["Товары для мам и детей"],
+  "dishes": ["Посуда"] 
 }
 
 export { filters };

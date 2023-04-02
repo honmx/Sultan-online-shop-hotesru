@@ -6,7 +6,7 @@ import { ICreateProduct } from "../../types/ICreateProduct";
 export const apiSlice = createApi({
   reducerPath: "api",
   tagTypes: ["Products"],
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8080" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://honmx.github.io/Sultan-online-shop-hotesru/db.json" }),
   endpoints: (builder) => ({
     getProducts: builder.query<IProduct[], void>({
       query: () => "/products",
