@@ -1,6 +1,18 @@
 @import "../../scss/variables.scss";
 
+.types {
+  display: flex;
+  flex-wrap: wrap;
 
+  &>* {
+    margin-bottom: 5px;
+    margin-right: 5px;
+  }
+}
+
+.createButton {
+  margin-top: 20px;
+}
 
 .error {
   color: $red;

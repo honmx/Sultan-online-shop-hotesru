@@ -1,3 +1,5 @@
+@import "../../scss/variables.scss";
+
 .form {
   width: 100%;
 }
@@ -11,4 +13,8 @@
     margin-right: 5px;
     margin-bottom: 5px;
   }
+}
+
+.error {
+  color: $red;
 }

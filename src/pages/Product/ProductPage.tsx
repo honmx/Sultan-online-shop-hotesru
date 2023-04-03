@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useGetProductQuery } from "../../store/slices/apiSlice";
+// import { useGetProductQuery } from "../../store/slices/apiSlice";
 import Button from "../../components/UI/Button/Button";
 import bottle from "../../assets/bottle.svg";
 import box from "../../assets/box.svg";
@@ -14,6 +14,7 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { addProduct } from "../../store/slices/cartSlice";
 import { useCartProduct } from "../../hooks/useCartProduct";
 import { setCartItemsToLocalStorage } from "../../helpers/setCartItemsToLocalStorage";
+// import { products } from "../../helpers/data/products";
 
 interface Props {
 
@@ -24,7 +25,10 @@ const ProductPage: FC<Props> = ({ }) => {
   const dispatch = useAppDispatch();
 
   const params = useParams();
-  const { data: product, isLoading, isSuccess } = useGetProductQuery(Number(params.id));
+  // const { data: product, isLoading, isSuccess } = useGetProductQuery(Number(params.id));
+  const products = useAppSelector(state => state.products.products);
+  
+  const product = products.find(item => item.id === Number(params.id));
 
   const [descriptionOpen, setDescriptionOpen] = useState<boolean>(false);
   const [optionsOpen, setOptionsOpen] = useState<boolean>(false);
@@ -51,10 +55,7 @@ const ProductPage: FC<Props> = ({ }) => {
     setCartItemsToLocalStorage([...cartProducts, newProduct]);
   }
 
-  console.log(inCart);
-
-  if (isLoading) return <p>Loading...</p>;
-  if (!isSuccess) return <p>An error occured</p>;
+  if (!product) return <p>Product was not found</p>
 
   return (
     <div className={s.container}>

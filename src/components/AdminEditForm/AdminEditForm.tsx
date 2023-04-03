@@ -1,11 +1,15 @@
-import React, { FC, MouseEvent, useState } from "react";
+import React, { FC, MouseEvent, useEffect, useState } from "react";
 import { IProduct } from "../../types/IProducts";
 import { FilterType } from "../../types/FilterType";
 import FormProductLabels from "../FormProductLabels/FormProductLabels";
 import { filters } from "../../helpers/data/filters";
 import Button from "../UI/Button/Button";
-import { useEditProductMutation } from "../../store/slices/apiSlice";
+// import { useEditProductMutation } from "../../store/slices/apiSlice";
 import s from "./AdminEditForm.module.scss";
+import { createProduct } from "../../helpers/createProduct";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { replaceProduct } from "../../store/slices/productsSlice";
+import { setItemsToLocalStorage } from "../../helpers/setItemsToLocalStorage";
 
 interface Props {
   product: IProduct;
@@ -14,7 +18,9 @@ interface Props {
 
 const AdminEditForm: FC<Props> = ({ product, changeEditStatus }) => {
 
-  const [editProduct, {}] = useEditProductMutation(); 
+  const dispatch = useAppDispatch();
+  // const [editProduct, {}] = useEditProductMutation();
+  const products = useAppSelector(state => state.products.products);
 
   const [brand, setBrand] = useState<string>(product.brand);
   const [name, setName] = useState<string>(product.name.secondary);
@@ -35,10 +41,11 @@ const AdminEditForm: FC<Props> = ({ product, changeEditStatus }) => {
 
   const handleConfirmEditClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (!brand || !name || !description || !url || !price || selectedTypes.length === 0) {
+    if (!brand || !name || !description || !url || !capacity || !price || selectedTypes.length === 0) {
       setError("Все поля должны быть заполнены");
     } else {
-      editProduct({ id: product.id, brand, name, description, url, price, capacity, selectedTypes, currency, category });
+      const newProduct = createProduct({ id: product.id, brand, name, description, url, price, capacity, selectedTypes, currency, category });
+      dispatch(replaceProduct(newProduct));
       changeEditStatus();
     }
   }

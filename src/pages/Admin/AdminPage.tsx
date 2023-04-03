@@ -1,8 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import s from "./AdminPage.module.scss";
 import ProductForm from "../../components/ProductForm/ProductForm";
-import { useGetProductsQuery } from "../../store/slices/apiSlice";
+// import { useGetProductsQuery } from "../../store/slices/apiSlice";
 import AdminProduct from "../../components/AdminProduct/AdminProduct";
+import { useAppSelector } from "../../store/hooks";
+import { setItemsToLocalStorage } from "../../helpers/setItemsToLocalStorage";
+// import { products } from "../../helpers/data/products";
 
 interface Props {
 
@@ -10,14 +13,19 @@ interface Props {
 
 const AdminPage: FC<Props> = ({ }) => {
 
-  const { data: products } = useGetProductsQuery();
+  // const { data: products } = useGetProductsQuery();
+  const products = useAppSelector(state => state.products.products);
 
+  useEffect(() => {
+    setItemsToLocalStorage(products);
+  }, [products]);
+   
   return (
     <div className={s.container}>
       <ProductForm className={s.form} />
       <div className={s.productsList}>
         {
-          products?.map(product => <AdminProduct key={product.id} product={product} />)
+          products.map(product => <AdminProduct key={product.id} product={product} />)
         }
       </div>
     </div>

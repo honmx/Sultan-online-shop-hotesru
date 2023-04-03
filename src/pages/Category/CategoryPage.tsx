@@ -12,10 +12,11 @@ import { sortOptions } from "../../helpers/data/sortOptions";
 import { sortBy } from "../../helpers/sortBy";
 import { useSmallerDevice } from "../../hooks/useSmallerDevice";
 import { useAppSelector } from "../../store/hooks";
-import { useGetProductsQuery } from "../../store/slices/apiSlice";
+// import { useGetProductsQuery } from "../../store/slices/apiSlice";
 import { FilterType } from "../../types/FilterType";
 import { IProduct } from "../../types/IProducts";
 import s from "./CategoryPage.module.scss";
+// import { products } from "../../helpers/data/products";
 
 interface Props {
 
@@ -33,9 +34,10 @@ const CategoryPage: FC<Props> = ({ }) => {
   const categoryType = location.pathname.slice(1).split("/")[1];
   const currentCategory = categories.find(category => category.type === categoryType) as CategoryType;
 
-  const { data: allProducts } = useGetProductsQuery();
+  // const { data: allProducts } = useGetProductsQuery();
+  const products = useAppSelector(state => state.products.products);
 
-  const currentCategoryProducts = allProducts?.filter(product => product.type.main === categoryType);
+  const currentCategoryProducts = products.filter(product => product.type.main === categoryType);
 
   const ref = useRef<HTMLDivElement>(null);
 
@@ -47,7 +49,7 @@ const CategoryPage: FC<Props> = ({ }) => {
 
   const [page, setPage] = useState<number>(0);
 
-  const products = useMemo(() => {
+  const filteredProducts = useMemo(() => {
     if (!currentCategoryProducts) return [];
     return sortBy(sort, currentCategoryProducts)
       .filter(product => {
@@ -83,10 +85,10 @@ const CategoryPage: FC<Props> = ({ }) => {
         filters={filters[currentCategory.type as FilterType]}
         selectedFilters={selectedFilters}
       />
-      <SideBar className={s.sidebar} products={products} categoryType={currentCategory.type as FilterType} />
+      <SideBar className={s.sidebar} products={filteredProducts} categoryType={currentCategory.type as FilterType} />
       <div className={s.productsListContainer}>
-        <ProductsList className={s.products} products={products} limit={12} page={page} />
-        <Pagination countOfPages={Math.floor(products.length / 12) + 1} currentPage={page} className={s.pagination} setPage={setPage} />
+        <ProductsList className={s.products} products={filteredProducts} limit={12} page={page} />
+        <Pagination countOfPages={Math.floor(filteredProducts.length / 12) + 1} currentPage={page} className={s.pagination} setPage={setPage} />
       </div>
     </div>
   )

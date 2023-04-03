@@ -2,15 +2,21 @@ import React, { FC, MouseEvent, useEffect, useState } from "react";
 import Button from "../UI/Button/Button";
 import { filters } from "../../helpers/data/filters";
 import { FilterType } from "../../types/FilterType";
-import { useCreateProductMutation } from "../../store/slices/apiSlice";
+// import { useCreateProductMutation } from "../../store/slices/apiSlice";
 import FormProductLabels from "../FormProductLabels/FormProductLabels";
 import s from "./ProductForm.module.scss";
+import { createProduct } from "../../helpers/createProduct";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { addProduct } from "../../store/slices/productsSlice";
+import { setItemsToLocalStorage } from "../../helpers/setItemsToLocalStorage";
 
 interface Props {
   className?: string;
 }
 
 const CreateForm: FC<Props> = ({ className }) => {
+
+  const dispatch = useAppDispatch();
 
   const [brand, setBrand] = useState<string>("");
   const [name, setName] = useState<string>("");
@@ -25,7 +31,8 @@ const CreateForm: FC<Props> = ({ className }) => {
 
   const [error, setError] = useState<string>("");
 
-  const [createProduct, { }] = useCreateProductMutation();
+  // const [createProduct, { }] = useCreateProductMutation();
+  const products = useAppSelector(state => state.products.products);
 
   useEffect(() => {
     setTypes(filters[category]);
@@ -55,7 +62,9 @@ const CreateForm: FC<Props> = ({ className }) => {
     if (!brand || !name || !description || !url || !price || selectedTypes.length === 0) {
       setError("Все поля должны быть заполнены");
     } else {
-      createProduct({ brand, name, description, url, price, capacity, selectedTypes, currency, category });
+      const newProduct = createProduct({ id: Math.round(Math.random() * 100000000), brand, name, description, url, price, capacity, selectedTypes, currency, category });
+      dispatch(addProduct(newProduct));
+      setItemsToLocalStorage([...products, newProduct]);
       clear();
     }
   }

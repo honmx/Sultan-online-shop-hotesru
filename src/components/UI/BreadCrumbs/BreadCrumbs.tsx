@@ -4,7 +4,9 @@ import { useSmallerDevice } from "../../../hooks/useSmallerDevice";
 import arrowLeft from "../../../assets/arrow-left.svg";
 import s from "./BreadCrumbs.module.scss";
 import Button from "../Button/Button";
-import { useGetProductsQuery } from "../../../store/slices/apiSlice";
+import { useAppSelector } from "../../../store/hooks";
+// import { products } from "../../../helpers/data/products";
+// import { useGetProductsQuery } from "../../../store/slices/apiSlice";
 
 interface Props {
   href: string
@@ -16,7 +18,9 @@ const BreadCrumbs: FC<Props> = ({ href }) => {
 
   const [smallerDevice] = useSmallerDevice(767);
 
-  const { data: products } = useGetProductsQuery();
+  // const { data: products } = useGetProductsQuery();
+
+  const products = useAppSelector(state => state.products.products);
 
   return (
     <div className={s.breadCrumbsContainer}>
