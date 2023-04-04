@@ -2,6 +2,4 @@
 
 How to start the app:
 <br>
--npm run server
-<br>
 -npm start
