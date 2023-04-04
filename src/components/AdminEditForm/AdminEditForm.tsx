@@ -7,9 +7,8 @@ import Button from "../UI/Button/Button";
 // import { useEditProductMutation } from "../../store/slices/apiSlice";
 import s from "./AdminEditForm.module.scss";
 import { createProduct } from "../../helpers/createProduct";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppDispatch } from "../../store/hooks";
 import { replaceProduct } from "../../store/slices/productsSlice";
-import { setItemsToLocalStorage } from "../../helpers/setItemsToLocalStorage";
 
 interface Props {
   product: IProduct;
@@ -20,7 +19,6 @@ const AdminEditForm: FC<Props> = ({ product, changeEditStatus }) => {
 
   const dispatch = useAppDispatch();
   // const [editProduct, {}] = useEditProductMutation();
-  const products = useAppSelector(state => state.products.products);
 
   const [brand, setBrand] = useState<string>(product.brand);
   const [name, setName] = useState<string>(product.name.secondary);

@@ -2,9 +2,9 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import { useSmallerDevice } from "../../../hooks/useSmallerDevice";
 import arrowLeft from "../../../assets/arrow-left.svg";
-import s from "./BreadCrumbs.module.scss";
 import Button from "../Button/Button";
 import { useAppSelector } from "../../../store/hooks";
+import s from "./BreadCrumbs.module.scss";
 // import { products } from "../../../helpers/data/products";
 // import { useGetProductsQuery } from "../../../store/slices/apiSlice";
 

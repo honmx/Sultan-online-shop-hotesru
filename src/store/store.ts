@@ -9,9 +9,9 @@ const store = configureStore({
     products: productsSlice,
     category: categorySlice,
     cart: cartSlice,
-    [apiSlice.reducerPath]: apiSlice.reducer,
+    // [apiSlice.reducerPath]: apiSlice.reducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware)
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware)
 });
 
 export { store };

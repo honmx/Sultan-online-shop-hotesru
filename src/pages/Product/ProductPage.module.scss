@@ -55,61 +55,7 @@
 }
 
 .buttonsContainer {
-  display: grid;
-  grid-template-areas:
-    "price quantity cart"
-    "share announce price-list";
-  justify-items: center;
-  align-items: center;
-  gap: 25px;
   margin: 25px 0 35px;
-}
-
-.price {
-  grid-area: price;
-  font-size: 30px;
-  font-weight: 800;
-}
-
-.changeQuantityContainer {
-  grid-area: quantity;
-  display: flex;
-
-  &>*:not(:last-child) {
-    margin-right: 10px;
-  }
-}
-
-.quantity {
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.cart {
-  grid-area: cart;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.share {
-  grid-area: share;
-}
-
-.announcement {
-  grid-area: announce;
-  text-align: center;
-  font-size: 12px;
-}
-
-.bold {
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.priceList {
-  grid-area: price-list;
-  color: $fontPrimaryGrey;
-  background-color: transparent;
 }
 
 .infoContainer {
@@ -168,32 +114,6 @@
   color: $red;
 }
 
-@media screen and (max-width: 1439px) {
-  .price {
-    font-size: 24px;
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .buttonsContainer {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "price quantity"
-      "cart share"
-      "announce announce"
-      "price-list price-list";
-
-    .price,
-    .cart {
-      justify-self: start;
-    }
-    .changeQuantityContainer,
-    .share {
-      justify-self: end;
-    }
-  }
-}
-
 @media screen and (max-width: 767px) {
   .container {
     margin-top: 20px;
@@ -209,9 +129,5 @@
   .productImgWrapper {
     margin-right: 0;
     max-height: none;
-  }
-  
-  .cart {
-    padding: 10px 20px;
   }
 }

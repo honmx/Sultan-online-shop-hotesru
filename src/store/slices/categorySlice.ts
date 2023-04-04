@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { sortOptionsType } from "../../helpers/data/sortOptions";
+import { sortOptionsType } from "../../types/SortOptionsType";
 
 interface ICategorySlice {
   sort: keyof sortOptionsType,

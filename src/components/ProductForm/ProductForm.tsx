@@ -4,11 +4,11 @@ import { filters } from "../../helpers/data/filters";
 import { FilterType } from "../../types/FilterType";
 // import { useCreateProductMutation } from "../../store/slices/apiSlice";
 import FormProductLabels from "../FormProductLabels/FormProductLabels";
-import s from "./ProductForm.module.scss";
 import { createProduct } from "../../helpers/createProduct";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppDispatch } from "../../store/hooks";
 import { addProduct } from "../../store/slices/productsSlice";
-import { setItemsToLocalStorage } from "../../helpers/setItemsToLocalStorage";
+import { addItemToLocalStorage } from "../../helpers/localStorage/addItemToLocaLStorage";
+import s from "./ProductForm.module.scss";
 
 interface Props {
   className?: string;
@@ -32,7 +32,6 @@ const CreateForm: FC<Props> = ({ className }) => {
   const [error, setError] = useState<string>("");
 
   // const [createProduct, { }] = useCreateProductMutation();
-  const products = useAppSelector(state => state.products.products);
 
   useEffect(() => {
     setTypes(filters[category]);
@@ -64,7 +63,7 @@ const CreateForm: FC<Props> = ({ className }) => {
     } else {
       const newProduct = createProduct({ id: Math.round(Math.random() * 100000000), brand, name, description, url, price, capacity, selectedTypes, currency, category });
       dispatch(addProduct(newProduct));
-      setItemsToLocalStorage([...products, newProduct]);
+      addItemToLocalStorage(newProduct);
       clear();
     }
   }

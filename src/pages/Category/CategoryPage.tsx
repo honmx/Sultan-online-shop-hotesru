@@ -9,14 +9,13 @@ import Title from "../../components/UI/Title/Title";
 import { categories, CategoryType } from "../../helpers/data/categories";
 import { filters } from "../../helpers/data/filters";
 import { sortOptions } from "../../helpers/data/sortOptions";
-import { sortBy } from "../../helpers/sortBy";
-import { useSmallerDevice } from "../../hooks/useSmallerDevice";
 import { useAppSelector } from "../../store/hooks";
 // import { useGetProductsQuery } from "../../store/slices/apiSlice";
 import { FilterType } from "../../types/FilterType";
 import { IProduct } from "../../types/IProducts";
-import s from "./CategoryPage.module.scss";
 // import { products } from "../../helpers/data/products";
+import { useFilteredProducts } from "../../hooks/useFilteredProducts";
+import s from "./CategoryPage.module.scss";
 
 interface Props {
 
@@ -34,12 +33,11 @@ const CategoryPage: FC<Props> = ({ }) => {
   const categoryType = location.pathname.slice(1).split("/")[1];
   const currentCategory = categories.find(category => category.type === categoryType) as CategoryType;
 
+  const ref = useRef<HTMLDivElement>(null);
+
   // const { data: allProducts } = useGetProductsQuery();
   const products = useAppSelector(state => state.products.products);
-
   const currentCategoryProducts = products.filter(product => product.type.main === categoryType);
-
-  const ref = useRef<HTMLDivElement>(null);
 
   const sort = useAppSelector(state => state.category.sort);
   const selectedFilters = useAppSelector(state => state.category.filters);
@@ -49,28 +47,13 @@ const CategoryPage: FC<Props> = ({ }) => {
 
   const [page, setPage] = useState<number>(0);
 
-  const filteredProducts = useMemo(() => {
-    if (!currentCategoryProducts) return [];
-    return sortBy(sort, currentCategoryProducts)
-      .filter(product => {
-        return selectedFilters.length === 0
-          ? true
-          : product.type.subtypes?.some(elem => selectedFilters.includes(elem));
-      })
-      .filter(product => {
-        return product.price.value >= priceRange.min && product.price.value <= priceRange.max;
-      })
-      .filter(product => {
-        return selectedProducers.length === 0
-          ? true
-          : selectedProducers.includes(product.producer);
-      })
-      .filter(product => {
-        return selectedBrands.length === 0
-          ? true
-          : selectedBrands.includes(product.brand);
-      })
-  }, [currentCategoryProducts, sort, selectedFilters, selectedProducers, selectedBrands]);
+  const [filteredProducts] = useFilteredProducts(currentCategoryProducts, {
+    sort,
+    selectedFilters,
+    priceRange,
+    selectedProducers,
+    selectedBrands,
+  });
 
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });

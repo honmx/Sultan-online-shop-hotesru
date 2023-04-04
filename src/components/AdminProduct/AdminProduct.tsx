@@ -2,8 +2,8 @@ import React, { FC, useState } from "react";
 import { IProduct } from "../../types/IProducts";
 import IconButton from "../UI/IconButton/IconButton";
 import editPen from "../../assets/edit-pen.svg";
-import s from "./AdminProduct.module.scss";
 import AdminEditForm from "../AdminEditForm/AdminEditForm";
+import s from "./AdminProduct.module.scss";
 
 interface Props {
   product: IProduct;

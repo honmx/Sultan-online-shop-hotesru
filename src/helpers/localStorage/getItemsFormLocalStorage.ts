@@ -1,4 +1,4 @@
-import { IProduct } from "../types/IProducts";
+import { IProduct } from "../../types/IProducts";
 
 export const getItemsFormLocalStorage = () => {
   const products = localStorage.getItem("products");

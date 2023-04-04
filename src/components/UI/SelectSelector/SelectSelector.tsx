@@ -1,8 +1,9 @@
-import React, { Dispatch, FC, SetStateAction, useEffect, useMemo, useState } from "react";
+import React, { Dispatch, FC, SetStateAction, useMemo, useState } from "react";
 import { countAppearings } from "../../../helpers/countAppearings";
 import { useAppSelector } from "../../../store/hooks";
 import TextInput from "../Input/TextInput";
 import s from "./SelectSelector.module.scss";
+import { useFilteredValues } from "../../../hooks/useFilteredValues";
 
 interface Props {
   name: string;
@@ -18,19 +19,13 @@ const SelectSelector: FC<Props> = ({ name, values, selected, setSelected, classN
 
   const [active, setActive] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>("");
-  const [filtered, setFiltered] = useState<string[]>(Array.from(new Set(values)).sort((a, b) => a.localeCompare(b)));
-
-  useEffect(() => {
-    setFiltered(prev => prev.filter(value => value.toLowerCase().startsWith(inputValue.toLowerCase())));
-  }, [inputValue]);
+  const [filtered] = useFilteredValues(values, { inputValue });
 
   const appearingOfValue = useMemo(() => {
     return countAppearings(values);
   }, [filtered, values]);
 
-  const isChecked = (value: string) => {
-    return selected.includes(value);
-  }
+  const isChecked = (value: string) => selected.includes(value);
 
   const handleChange = (value: string) => {
     if (selected.includes(value)) {

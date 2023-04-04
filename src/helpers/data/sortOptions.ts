@@ -4,5 +4,3 @@ export const sortOptions = {
   "price up": "Цена (по возрастанию)",
   "price down": "Цена (по убыванию)",
 } as const;
-
-export type sortOptionsType = typeof sortOptions;

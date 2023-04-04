@@ -1,7 +1,8 @@
 import { IProduct } from "../types/IProducts";
-import { sortOptionsType } from "./data/sortOptions";
+import { sortOptionsType } from "../types/SortOptionsType";
 
 export const sortBy = (field: keyof sortOptionsType, products: IProduct[]) => {
+
   switch (field) {
     case "name up":
       return products.sort((a, b) => a.name.main.localeCompare(b.name.main));

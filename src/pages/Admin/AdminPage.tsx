@@ -1,11 +1,10 @@
 import React, { FC, useEffect } from "react";
-import s from "./AdminPage.module.scss";
 import ProductForm from "../../components/ProductForm/ProductForm";
 // import { useGetProductsQuery } from "../../store/slices/apiSlice";
 import AdminProduct from "../../components/AdminProduct/AdminProduct";
 import { useAppSelector } from "../../store/hooks";
-import { setItemsToLocalStorage } from "../../helpers/setItemsToLocalStorage";
-// import { products } from "../../helpers/data/products";
+import { setItemsToLocalStorage } from "../../helpers/localStorage/setItemsToLocalStorage";
+import s from "./AdminPage.module.scss";
 
 interface Props {
 

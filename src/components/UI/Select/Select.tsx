@@ -1,6 +1,6 @@
 import React, { ChangeEvent, Dispatch, FC, SetStateAction } from "react";
-import s from "./Select.module.scss";
 import { FilterType } from "../../../types/FilterType";
+import s from "./Select.module.scss";
 
 interface Props {
   options: string[];

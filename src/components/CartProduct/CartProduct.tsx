@@ -1,13 +1,12 @@
 import React, { FC } from "react";
 import { IProduct } from "../../types/IProducts";
-import bottle from "../../assets/bottle.svg";
-import box from "../../assets/box.svg";
 import trash from "../../assets/trash.svg";
-import s from "./CartProduct.module.scss";
 import Button from "../UI/Button/Button";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { changeQuantity, deleteProduct } from "../../store/slices/cartSlice";
-import { setCartItemsToLocalStorage } from "../../helpers/setCartItemsToLocalStorage";
+import { setCartItemsToLocalStorage } from "../../helpers/localStorage/setCartItemsToLocalStorage";
+import ProductCapacity from "../ProductCapacity/ProductCapacity";
+import s from "./CartProduct.module.scss";
 
 interface Props {
   product: IProduct;
@@ -39,13 +38,7 @@ const CartProduct: FC<Props> = ({ product, quantity }) => {
         <img src={product.url} />
       </div>
       <div className={s.text}>
-        <p className={s.capacity}>
-          <img src={
-            product.capacity?.type === "л" || product.capacity?.type === "мл"
-              ? bottle : box
-          } alt="" />
-          <span className={s.capacityText}>{product.capacity?.value} {product.capacity?.type}</span>
-        </p>
+        <ProductCapacity type={product.capacity?.type} value={product.capacity?.value} className={s.capacity} />
         <p className={s.name}>{product.name.main} {product.name.secondary}</p>
         <p className={s.description}>{product.description}</p>
       </div>

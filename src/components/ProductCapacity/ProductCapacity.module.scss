@@ -1,0 +1,14 @@
+@import "../../scss/variables.scss";
+
+.capacity {
+  display: flex;
+  align-items: center;
+  color: $fontPrimaryGrey;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.capacityText {
+  display: inline-block;
+  margin-left: 8px;
+}

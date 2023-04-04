@@ -5,10 +5,9 @@ import ProductsList from "../../components/ProductsList/ProductsList";
 import Subtitle from "../../components/UI/Subtitle/Subtitle";
 import Title from "../../components/UI/Title/Title";
 import "../../scss/common.scss";
-// import { products } from "../../helpers/data/products";
 // import { useGetProductsQuery } from "../../store/slices/apiSlice";
-import s from "./HomePage.module.scss";
 import { useAppSelector } from "../../store/hooks";
+import s from "./HomePage.module.scss";
 
 interface Props {
 

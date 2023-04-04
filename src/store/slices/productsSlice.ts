@@ -1,13 +1,17 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { products } from "../../helpers/data/products";
 import { IProduct } from "../../types/IProducts";
-import { getItemsFormLocalStorage } from "../../helpers/getItemsFormLocalStorage";
+import { getItemsFormLocalStorage } from "../../helpers/localStorage/getItemsFormLocalStorage";
+
+interface IProductsSlice {
+  products: IProduct[];
+}
 
 const productsSlice = createSlice({
   name: "products",
   initialState: {
     products: getItemsFormLocalStorage() || products,
-  },
+  } as IProductsSlice,
   reducers: {
     setProducts(state, action: PayloadAction<IProduct[]>) {
       state.products = action.payload;
@@ -16,7 +20,7 @@ const productsSlice = createSlice({
       state.products.push(action.payload);
     },
     replaceProduct(state, action: PayloadAction<IProduct>) {
-      state.products = state.products.filter(item => item.id !== action.payload.id).concat(action.payload);
+      state.products = state.products.map(item => item.id !== action.payload.id ? item : action.payload);
     }
   }
 });

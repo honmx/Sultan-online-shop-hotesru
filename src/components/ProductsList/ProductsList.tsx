@@ -15,12 +15,7 @@ interface Props {
 const ProductsList: FC<Props> = ({ products, className, limit = 0, page = 0 }) => {
 
   const dispatch = useAppDispatch();
-
-  const filters = useAppSelector(state => state.category.filters);
-  const selectedProducers = useAppSelector(state => state.category.selectors.producer);
-  const selectedBrands = useAppSelector(state => state.category.selectors.brand);
   
-  // causes problems when returning from another page
   useEffect(() => {
     dispatch(clearAllFilters());
   }, []);

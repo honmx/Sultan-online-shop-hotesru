@@ -1,0 +1,57 @@
+@import "../../scss/variables.scss";
+
+.infoContainer {
+  &>* {
+    margin: 35px 0;
+  }
+}
+
+.option {
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+
+  & span {
+    font-size: 10px;
+  }
+
+}
+
+.optionType {
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 14px;
+  font-weight: 300;
+  color: $fontPrimaryGrey;
+}
+
+.optionValue {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 12px;
+  font-weight: 300;
+  padding-bottom: 20px;
+  border-bottom: 1px dotted $primaryGrey;
+}
+
+.options,
+.description {
+  cursor: pointer;
+}
+
+.stock {
+  color: $green;
+}
+
+.notStock {
+  color: $red;
+}

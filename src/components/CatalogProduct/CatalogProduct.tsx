@@ -4,12 +4,12 @@ import Button from "../UI/Button/Button";
 import { NavLink } from "react-router-dom";
 import whiteCart from "../../assets/whiteCart.svg";
 import checkWhite from "../../assets/check-white.svg";
-import bottle from "../../assets/bottle.svg";
-import box from "../../assets/box.svg";
 import { addProduct } from "../../store/slices/cartSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { setCartItemsToLocalStorage } from "../../helpers/setCartItemsToLocalStorage";
+import { setCartItemsToLocalStorage } from "../../helpers/localStorage/setCartItemsToLocalStorage";
 import { useCartProduct } from "../../hooks/useCartProduct";
+import ProductParameter from "../ProductParameter/ProductParameter";
+import ProductCapacity from "../ProductCapacity/ProductCapacity";
 import s from "./CatalogProduct.module.scss";
 
 interface Props {
@@ -24,7 +24,6 @@ const CatalogProduct: FC<Props> = ({ product }) => {
   const { inCart } = useCartProduct(product);
 
   const handleAddClick = () => {
-
     if (!product.stock) return;
 
     if (cartProducts.find(item => item.product.id === product.id)) return;
@@ -41,31 +40,16 @@ const CatalogProduct: FC<Props> = ({ product }) => {
           <img src={product.url} alt="" />
         </div>
         <p className={`${s.stock} ${product.stock ? s.inStock : s.notInStock}`}>{ product.stock ? "В наличии" : "Нет в наличии" }</p>
-        <p className={s.capacity}>
-          <img src={
-            product.capacity?.type === "л" || product.capacity?.type === "мл"
-              ? bottle : box
-          } alt="" />
-          <span className={s.capacityText}>{product.capacity?.value} {product.capacity?.type}</span>
-        </p>
+        <ProductCapacity type={product.capacity?.type} value={product.capacity?.value} className={s.capacity} />
         <p className={s.name}>
           <span className={s.mainName}>{product.name.main} </span>
           <span className={s.secondaryName}>{product.name.secondary}</span>
         </p>
       </NavLink>
       <div className={s.parameters}>
-        <p className={s.barcode}>
-          <span className={s.parameterType}>Штрихкод: </span>
-          <span className={s.parameterValue}>{product.barcode}</span>
-        </p>
-        <p className={s.producer}>
-          <span className={s.parameterType}>Производитель: </span>
-          <span className={s.parameterValue}>{product.producer}</span>
-        </p>
-        <p className={s.brand}>
-          <span className={s.parameterType}>Бренд: </span>
-          <span className={s.parameterValue}>{product.brand}</span>
-        </p>
+        <ProductParameter type="Штрихкод:" value={product.barcode} classname={s.barcode} />
+        <ProductParameter type="Производитель:" value={product.producer} classname={s.barcode} />
+        <ProductParameter type="Бренд:" value={product.brand} classname={s.barcode} />
       </div>
       <div className={s.priceAndButtonContainer}>
         <p className={s.price}>{product.price.value} {product.price.currency}</p>

@@ -8,8 +8,6 @@ interface Props {
   setValue?: Dispatch<SetStateAction<string>>;
 }
 
-
-
 const TextInput: FC<Props> = ({ placeholder, className, value, setValue }) => {
   return (
     <input

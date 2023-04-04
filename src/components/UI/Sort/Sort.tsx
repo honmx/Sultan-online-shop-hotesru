@@ -1,8 +1,8 @@
-import React, { Dispatch, FC, SetStateAction } from "react";
-import { sortOptions, sortOptionsType } from "../../../helpers/data/sortOptions";
+import React, { FC } from "react";
 import { useAppDispatch } from "../../../store/hooks";
 import { setSort } from "../../../store/slices/categorySlice";
 import s from "./Sort.module.scss";
+import { sortOptionsType } from "../../../types/SortOptionsType";
 
 interface Props {
   className: string;

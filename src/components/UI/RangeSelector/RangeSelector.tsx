@@ -12,14 +12,17 @@ interface Props {
 
 const RangeSelector: FC<Props> = ({ name, min, max, setMin, setMax, className }) => {
 
+  const handleMinPriceChange = (e: ChangeEvent<HTMLInputElement>) => setMin(Number(e.target.value))
+  
+  const handleMaxPriceChange = (e: ChangeEvent<HTMLInputElement>) => setMax(Number(e.target.value))
 
   return (
     <div className={`${s.rangeContainer} ${className}`}>
       <p className={s.name}>{name}</p>
       <div className={s.inputContainer}>
-        <input type="text" value={min} onChange={(e: ChangeEvent<HTMLInputElement>) => setMin(Number(e.target.value))} />
+        <input type="text" value={min} onChange={handleMinPriceChange} />
         <span>-</span>
-        <input type="text" value={max} onChange={(e: ChangeEvent<HTMLInputElement>) => setMax(Number(e.target.value))} />
+        <input type="text" value={max} onChange={handleMaxPriceChange} />
       </div>
     </div>
   )

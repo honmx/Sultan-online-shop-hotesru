@@ -2,8 +2,8 @@ import React, { Dispatch, FC, SetStateAction, useEffect } from "react";
 import IconButton from "../IconButton/IconButton";
 import leftArrow from "../../../assets/left-arrow-accent.svg";
 import rightArrow from "../../../assets/right-arrow-accent.svg";
-import s from "./Pagination.module.scss";
 import Button from "../Button/Button";
+import s from "./Pagination.module.scss";
 
 interface Props {
   countOfPages: number;
@@ -20,9 +20,13 @@ const Pagination: FC<Props> = ({ countOfPages, currentPage, setPage, className }
   
   if (countOfPages === 1) return null;
 
+  const handlePreviousPageClick = () => setPage(prev => prev != 0 ? prev - 1 : prev)
+
+  const handleNextPageClick = () => setPage(prev => prev != countOfPages - 1 ? prev + 1 : prev)
+
   return (
     <div className={`${s.pagination} ${className}`}>
-      <IconButton img={leftArrow} ar={1} w="40px" onClick={() => setPage(prev => prev != 0 ? prev - 1 : prev)} />
+      <IconButton img={leftArrow} ar={1} w="40px" onClick={handlePreviousPageClick} />
       <div className={s.pages}>
         {
           Array(countOfPages)
@@ -40,7 +44,7 @@ const Pagination: FC<Props> = ({ countOfPages, currentPage, setPage, className }
             </Button>)
         }
       </div>
-      <IconButton img={rightArrow} ar={1} w="40px" onClick={() => setPage(prev => prev != countOfPages - 1 ? prev + 1 : prev)} />
+      <IconButton img={rightArrow} ar={1} w="40px" onClick={handleNextPageClick} />
     </div>
   )
 };

@@ -1,10 +1,13 @@
-import { IProduct } from "../types/IProducts";
-import { getItemsFormLocalStorage } from "./getItemsFormLocalStorage";
+import { IProduct } from "../../types/IProducts";
+import { getItemsFormLocalStorage } from "../localStorage/getItemsFormLocalStorage";
 
 export const addItemToLocalStorage = (product: IProduct) => {
   const items = getItemsFormLocalStorage();
 
-  if (!items) return;
+  if (!items) {
+    // localStorage.setItem("products", JSON.stringify([product]));
+    return;
+  }
 
   const filtered = items.filter(item => item.id !== product.id);
 

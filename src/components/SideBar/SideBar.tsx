@@ -12,8 +12,8 @@ import { FilterType } from "../../types/FilterType";
 import { useSmallerDevice } from "../../hooks/useSmallerDevice";
 import arrowDown from "../../assets/arrow-down.svg";
 import arrowLeft from "../../assets/arrow-left.svg";
-import s from "./SideBar.module.scss";
 import { setBrands, setPrice, setProducers } from "../../store/slices/categorySlice";
+import s from "./SideBar.module.scss";
 
 interface Props {
   className?: string;

@@ -10,7 +10,7 @@ export const products: IProduct[] = [
     "url": "https://img.fix-price.com/800x800/images/origin/origin/1f7cfe54b85f1cd69dd4c736604fac83.jpg",
     "capacity": {
       "value": "80",
-      "type": ""
+      "type": "г"
     },
     "barcode": 3122156,
     "producer": "Splat",
@@ -37,7 +37,7 @@ export const products: IProduct[] = [
     "url": "https://img.fix-price.com/800x800/images/origin/origin/9bfe6a2ad331e23a8d87978ba61f6f86.jpg",
     "capacity": {
       "value": "520",
-      "type": ""
+      "type": "мл"
     },
     "barcode": 3123039,
     "producer": "Vilsendent",
@@ -118,7 +118,7 @@ export const products: IProduct[] = [
     "url": "https://img.fix-price.com/800x800/images/origin/origin/ecb210866e3ad8c477aeaf402a8647d4.jpg",
     "capacity": {
       "value": "60",
-      "type": ""
+      "type": "г"
     },
     "barcode": 3114073,
     "producer": "Ёлочка",
@@ -321,7 +321,7 @@ export const products: IProduct[] = [
     "url": "https://img.fix-price.com/800x800/images/origin/origin/5273cfb88e45db9c16831d8a311c79d8.jpg",
     "capacity": {
       "value": "1.5",
-      "type": ""
+      "type": "л"
     },
     "barcode": 3211209,
     "producer": "Premium Quality",
