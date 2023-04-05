@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Sultan-online-shop-hotesru/static/css/main.47323907.css",
-    "main.js": "/Sultan-online-shop-hotesru/static/js/main.e0e464f7.js",
+    "main.css": "/Sultan-online-shop-hotesru/static/css/main.b0a126c2.css",
+    "main.js": "/Sultan-online-shop-hotesru/static/js/main.9d66c2f8.js",
     "static/media/banner.jpg": "/Sultan-online-shop-hotesru/static/media/banner.dad9be70e146dff00fed.jpg",
     "static/media/logo.svg": "/Sultan-online-shop-hotesru/static/media/logo.ecb5737fe7a7403daf48b71931499e83.svg",
     "static/media/logo-white.svg": "/Sultan-online-shop-hotesru/static/media/logo-white.2a1db7c45201542898160b5658c6665c.svg",
@@ -23,16 +23,17 @@
     "static/media/blackSearch.svg": "/Sultan-online-shop-hotesru/static/media/blackSearch.8f298ba34a888a08dd908fd51c4b5163.svg",
     "static/media/search.svg": "/Sultan-online-shop-hotesru/static/media/search.52d3dd936f6348b49dc316e8efb07e3d.svg",
     "static/media/check-white.svg": "/Sultan-online-shop-hotesru/static/media/check-white.f9a0b0b10eb58288146fcbd63a0114cc.svg",
+    "static/media/dark-cross.svg": "/Sultan-online-shop-hotesru/static/media/dark-cross.bddebc20f8b9adf8d2ec5382ea3cf093.svg",
     "static/media/darkDownload.svg": "/Sultan-online-shop-hotesru/static/media/darkDownload.55486e47264d3102fc6b37c080648b94.svg",
     "static/media/left-arrow-accent.svg": "/Sultan-online-shop-hotesru/static/media/left-arrow-accent.f4ac09e46eed14aa13bb261588c2f9c8.svg",
     "static/media/right-arrow-accent.svg": "/Sultan-online-shop-hotesru/static/media/right-arrow-accent.bb17486cce4fafb262e81f6d8ce17678.svg",
     "static/media/arrow-down.svg": "/Sultan-online-shop-hotesru/static/media/arrow-down.dcb9192cfb3003de115f611f36bc6124.svg",
     "static/media/arrow-left.svg": "/Sultan-online-shop-hotesru/static/media/arrow-left.cd443d0f8cc74b3b8435e7d352bce3d2.svg",
-    "main.47323907.css.map": "/Sultan-online-shop-hotesru/static/css/main.47323907.css.map",
-    "main.e0e464f7.js.map": "/Sultan-online-shop-hotesru/static/js/main.e0e464f7.js.map"
+    "main.b0a126c2.css.map": "/Sultan-online-shop-hotesru/static/css/main.b0a126c2.css.map",
+    "main.9d66c2f8.js.map": "/Sultan-online-shop-hotesru/static/js/main.9d66c2f8.js.map"
   },
   "entrypoints": [
-    "static/css/main.47323907.css",
-    "static/js/main.e0e464f7.js"
+    "static/css/main.b0a126c2.css",
+    "static/js/main.9d66c2f8.js"
   ]
 }
