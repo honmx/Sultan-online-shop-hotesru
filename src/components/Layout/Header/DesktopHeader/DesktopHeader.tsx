@@ -33,10 +33,10 @@ const DesktopHeader: FC<Props> = ({ }) => {
             <CompanyInfo src={mail} title="opt.sultan@mail.ru " subtitle="На связи в любое время" />
           </div>
           <div className={s.faq}>
-            <Link to="/about" className={`${s.link} link`}>О компании</Link>
-            <Link to="/payment-and-delivery" className={`${s.link} link`}>Оплата и доставка</Link>
-            <Link to="/refund" className={`${s.link} link`}>Возврат</Link>
-            <Link to="/contacts" className={`${s.link} link`}>Контакты</Link>
+            <Link data-testid="aboutlink" to="/about" className={`${s.link} link`}>О компании</Link>
+            <Link data-testid="paymentlink" to="/payment-and-delivery" className={`${s.link} link`}>Оплата и доставка</Link>
+            <Link data-testid="refundlink" to="/refund" className={`${s.link} link`}>Возврат</Link>
+            <Link data-testid="contactslink" to="/contacts" className={`${s.link} link`}>Контакты</Link>
           </div>
         </div>
       </div>

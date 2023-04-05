@@ -84,8 +84,8 @@ const SideBar: FC<Props> = ({ className, products, categoryType }) => {
             setSelected={setSelectedBrands}
           />
           <div className={s.buttonsContainer}>
-            <Button className={s.show} onClick={applyFilters}>Показать</Button>
-            <Button img={trash} p={"18.5px"} onClick={clearFilters}></Button>
+            <Button testid="applybtn" className={s.show} onClick={applyFilters}>Показать</Button>
+            <Button testid="clearbtn" img={trash} p={"18.5px"} onClick={clearFilters}></Button>
           </div>
         </div>
       }

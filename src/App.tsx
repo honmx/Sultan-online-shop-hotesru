@@ -23,10 +23,10 @@ const App: FC = ({ }) => {
           </Route>
         </Route>
         <Route path="/admin" element={<AdminPage />} />
-        <Route path="/about" element={<p>about</p>} />
-        <Route path="/payment-and-delivery" element={<p>payment and delivery</p>} />
-        <Route path="/refund" element={<p>refund</p>} />
-        <Route path="/contacts" element={<p>contacts</p>} />
+        <Route path="/about" element={<p data-testid="about">about</p>} />
+        <Route path="/payment-and-delivery" element={<p data-testid="payment-and-delivery">payment and delivery</p>} />
+        <Route path="/refund" element={<p data-testid="refund">refund</p>} />
+        <Route path="/contacts" element={<p data-testid="contacts">contacts</p>} />
       </Route>
     </Routes>
   )

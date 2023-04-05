@@ -14,25 +14,27 @@ interface ICategorySlice {
   },
 }
 
+export const initialState: ICategorySlice = {
+  sort: "name up",
+  filters: [],
+  selectors: {
+    price: {
+      min: 0,
+      max: 10000
+    },
+    producer: [],
+    brand: []
+  }
+}
+
 const categorySlice = createSlice({
   name: "category",
-  initialState: {
-    sort: "name up",
-    filters: [],
-    selectors: {
-      price: {
-        min: 0,
-        max: 10000
-      },
-      producer: [],
-      brand: []
-    },
-  } as ICategorySlice,
+  initialState,
   reducers: {
     setSort(state, action: PayloadAction<keyof sortOptionsType>) {
       state.sort = action.payload;
     },
-    setPrice(state, action: PayloadAction<{min: number, max: number}>) {
+    setPrice(state, action: PayloadAction<{ min: number, max: number }>) {
       state.selectors.price = action.payload;
     },
     setProducers(state, action: PayloadAction<string[]>) {

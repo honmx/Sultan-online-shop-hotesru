@@ -17,7 +17,7 @@ const MainBanner: FC<Props> = ({ }) => {
         <div className={s.bannerText}>
           <p className={s.title}>Бытовая химия, косметика и хозтовары</p>
           <p className={s.subtitle}>оптом по кокчетаву и области</p>
-          <NavLink to="catalog" className="link">
+          <NavLink data-testid="link" to="catalog" className="link">
             <Button className={s.button} tt="uppercase">В каталог</Button>
           </NavLink>
         </div>

@@ -10,12 +10,14 @@ interface Props {
   ar?: number;
   w?: string;
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
+  testid?: string;
 }
 
-const Button: FC<Props> = ({ children, img, p, tt, className, ar, w, onClick }) => {
+const Button: FC<Props> = ({ children, img, p, tt, className, ar, w, onClick, testid }) => {
 
   return (
     <button
+      data-testid={testid && testid}
       onClick={onClick && onClick}
       className={`${className} ${s.button}`}
       style={{

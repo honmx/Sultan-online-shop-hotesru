@@ -1,5 +1,5 @@
 import React, { Dispatch, FC, SetStateAction, useMemo, useState } from "react";
-import { countAppearings } from "../../../helpers/countAppearings";
+import { countAppearings } from "../../../helpers/countAppearings/countAppearings";
 import { useAppSelector } from "../../../store/hooks";
 import TextInput from "../Input/TextInput";
 import s from "./SelectSelector.module.scss";
