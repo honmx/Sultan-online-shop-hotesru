@@ -5,6 +5,7 @@ import TextInput from "../UI/Input/TextInput";
 import TextArea from "../UI/TextArea/TextArea";
 import Select from "../UI/Select/Select";
 import { filters } from "../../helpers/data/filters";
+import ProductLabel from "../ProductLabel/ProductLabel";
 
 interface Props {
   className?: string;
@@ -34,34 +35,13 @@ const FormProductLabels: FC<Props> = (props) => {
 
   return (
     <>
-      <label className={s.label}>
-        <p className={s.text}>Бренд</p>
-        <TextInput value={props.brand} setValue={props.setBrand} className={s.input} />
-      </label>
-      <label className={s.label}>
-        <p className={s.text}>Название продукта</p>
-        <TextInput value={props.name} setValue={props.setName} className={s.input} />
-      </label>
-      <label className={s.label}>
-        <p className={s.text}>Ссылка на изображение</p>
-        <TextInput value={props.url} setValue={props.setUrl} className={s.input} />
-      </label>
-      <label className={s.label}>
-        <p className={s.text}>Описание продукта</p>
-        <TextArea value={props.description} setValue={props.setDescription} className={`${s.input} ${s.description}`} />
-      </label>
-      <label className={`${s.label} ${s.priceValueInput}`}>
-        <p className={s.text}>Цена</p>
-        <TextInput value={props.price} setValue={props.setPrice} className={s.input} />
-      </label>
-      <label className={s.label}>
-        <p className={s.text}>Валюта</p>
-        <Select value={props.currency} setValue={props.setCurrency} className={s.input} options={["₸"]} />
-      </label>
-      <label className={s.label}>
-        <p className={s.text}>Вместимость (опционально)</p>
-        <TextInput value={props.capacity} setValue={props.setCapacity} className={s.input} />
-      </label>
+      <ProductLabel className={s.label} label="Бренд" value={props.brand} setValue={props.setBrand} />
+      <ProductLabel className={s.label} label="Название продукта" value={props.name} setValue={props.setName} />
+      <ProductLabel className={s.label} label="Ссылка на изображение" value={props.url} setValue={props.setUrl} />
+      <ProductLabel className={s.label} label="Описание продукта" value={props.description} setValue={props.setDescription} />
+      <ProductLabel className={s.label} label="Цена" value={props.price} setValue={props.setPrice} />
+      <ProductLabel className={s.label} label="Валюта" value={props.currency} setValue={props.setCurrency} />
+      <ProductLabel className={s.label} label="Вместимость (опционально)" value={props.capacity} setValue={props.setCapacity} />
       <label className={s.label}>
         <p className={s.text}>Категория</p>
         <Select value={props.category} setFilter={props.setCategory} className={s.input} options={Object.keys(filters)} />
