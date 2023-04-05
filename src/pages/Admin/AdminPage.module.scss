@@ -5,6 +5,10 @@
   margin-top: 35px;
 }
 
+.title {
+  margin-bottom: 35px;
+}
+
 @media screen and (max-width: 1023px) {
   .container {
     grid-template-columns: 1fr;

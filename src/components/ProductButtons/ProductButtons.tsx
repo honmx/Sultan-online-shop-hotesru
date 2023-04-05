@@ -7,7 +7,7 @@ import share from "../../assets/share.svg";
 import whiteCart from "../../assets/whiteCart.svg";
 import whiteCheck from "../../assets/check-white.svg";
 import darkDownload from "../../assets/darkDownload.svg";
-import { addProduct } from "../../store/slices/cartSlice";
+import { addCartProduct } from "../../store/slices/cartSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { setCartItemsToLocalStorage } from "../../helpers/localStorage/setCartItemsToLocalStorage";
 import s from "./ProductButtons.module.scss";
@@ -39,7 +39,7 @@ const ProductButtons: FC<Props> = ({ product, quantity, setQuantity, className }
     if (!product || inCart) return;
 
     const newProduct = { product, quantity: product.stock ? quantity : 0 };
-    dispatch(addProduct(newProduct));
+    dispatch(addCartProduct(newProduct));
     setCartItemsToLocalStorage([...cartProducts, newProduct]);
   }
 

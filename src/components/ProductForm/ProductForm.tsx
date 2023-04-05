@@ -9,6 +9,7 @@ import { useAppDispatch } from "../../store/hooks";
 import { addProduct } from "../../store/slices/productsSlice";
 import { addItemToLocalStorage } from "../../helpers/localStorage/addItemToLocaLStorage";
 import s from "./ProductForm.module.scss";
+import Title from "../UI/Title/Title";
 
 interface Props {
   className?: string;
@@ -70,6 +71,7 @@ const CreateForm: FC<Props> = ({ className }) => {
 
   return (
     <div className={`${s.formContainer} ${className}`}>
+      <Title className={s.title} usualText="Создать товар" />
       <form action="" className={s.form}>
         <FormProductLabels
           brand={brand} setBrand={setBrand}

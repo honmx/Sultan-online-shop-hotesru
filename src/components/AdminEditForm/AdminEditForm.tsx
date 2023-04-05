@@ -25,7 +25,7 @@ const AdminEditForm: FC<Props> = ({ product, changeEditStatus }) => {
   const [description, setDescription] = useState<string>(product.description);
   const [url, setUrl] = useState<string>(product.url);
   const [price, setPrice] = useState<string>(product.price.value as unknown as string);
-  const [capacity, setCapacity] = useState<string>(product.capacity?.value as string);
+  const [capacity, setCapacity] = useState<string>((product.capacity && product.capacity.value + product.capacity.type) as string);
   const [currency, setCurrency] = useState<string>(product.price.currency);
   const [category, setCategory] = useState<FilterType>(product.type.main);
   const [types, setTypes] = useState<string[]>(filters[product.type.main]);

@@ -4,7 +4,7 @@ import Button from "../UI/Button/Button";
 import { NavLink } from "react-router-dom";
 import whiteCart from "../../assets/whiteCart.svg";
 import checkWhite from "../../assets/check-white.svg";
-import { addProduct } from "../../store/slices/cartSlice";
+import { addCartProduct } from "../../store/slices/cartSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { setCartItemsToLocalStorage } from "../../helpers/localStorage/setCartItemsToLocalStorage";
 import { useCartProduct } from "../../hooks/useCartProduct";
@@ -29,7 +29,7 @@ const CatalogProduct: FC<Props> = ({ product }) => {
     if (cartProducts.find(item => item.product.id === product.id)) return;
 
     const newProduct = {product, quantity: 1}
-    dispatch(addProduct(newProduct));
+    dispatch(addCartProduct(newProduct));
     setCartItemsToLocalStorage([...cartProducts, newProduct]);
   }
 

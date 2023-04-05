@@ -12,10 +12,10 @@ const cartSlice = createSlice({
     cartItems: getCartItemsFromLocalStorage(),
   } as ICartSlice,
   reducers: {
-    addProduct(state, action: PayloadAction<CartProductType>) {
+    addCartProduct(state, action: PayloadAction<CartProductType>) {
       state.cartItems.push(action.payload);
     },
-    deleteProduct(state, action: PayloadAction<number>) {
+    deleteCartProduct(state, action: PayloadAction<number>) {
       state.cartItems = state.cartItems.filter(item => item.product.id !== action.payload)
     },
     changeQuantity(state, action: PayloadAction<CartProductType>) {
@@ -32,5 +32,5 @@ const cartSlice = createSlice({
   }
 });
 
-export const { addProduct, deleteProduct, changeQuantity, clearCart } = cartSlice.actions;
+export const { addCartProduct, deleteCartProduct, changeQuantity, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

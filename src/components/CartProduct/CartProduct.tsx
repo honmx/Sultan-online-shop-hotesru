@@ -3,7 +3,7 @@ import { IProduct } from "../../types/IProducts";
 import trash from "../../assets/trash.svg";
 import Button from "../UI/Button/Button";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { changeQuantity, deleteProduct } from "../../store/slices/cartSlice";
+import { changeQuantity, deleteCartProduct } from "../../store/slices/cartSlice";
 import { setCartItemsToLocalStorage } from "../../helpers/localStorage/setCartItemsToLocalStorage";
 import ProductCapacity from "../ProductCapacity/ProductCapacity";
 import s from "./CartProduct.module.scss";
@@ -20,7 +20,7 @@ const CartProduct: FC<Props> = ({ product, quantity }) => {
   const cartProducts = useAppSelector(state => state.cart.cartItems);
 
   const handleDeleteClick = () => {
-    dispatch(deleteProduct(product.id));
+    dispatch(deleteCartProduct(product.id));
     setCartItemsToLocalStorage(cartProducts.filter(item => item.product.id !== product.id));
   }
 

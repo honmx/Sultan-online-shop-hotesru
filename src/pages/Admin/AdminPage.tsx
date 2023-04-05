@@ -5,6 +5,7 @@ import AdminProduct from "../../components/AdminProduct/AdminProduct";
 import { useAppSelector } from "../../store/hooks";
 import { setItemsToLocalStorage } from "../../helpers/localStorage/setItemsToLocalStorage";
 import s from "./AdminPage.module.scss";
+import Title from "../../components/UI/Title/Title";
 
 interface Props {
 
@@ -18,14 +19,17 @@ const AdminPage: FC<Props> = ({ }) => {
   useEffect(() => {
     setItemsToLocalStorage(products);
   }, [products]);
-   
+
   return (
     <div className={s.container}>
       <ProductForm className={s.form} />
-      <div className={s.productsList}>
-        {
-          products.map(product => <AdminProduct key={product.id} product={product} />)
-        }
+      <div className={s.editContainer}>
+        <Title className={s.title} usualText="Редактировать товары" />
+        <div className={s.productsList}>
+          {
+            products.map(product => <AdminProduct key={product.id} product={product} />)
+          }
+        </div>
       </div>
     </div>
   )

@@ -12,7 +12,7 @@
   }
 
   &:hover {
-    .edit {
+    .edit, .delete {
       display: block;
     }
   }
@@ -73,9 +73,17 @@
   }
 }
 
-.edit {
+.delete, .edit {
   display: none;
   position: absolute;
+}
+
+.delete {
   top: 0;
+  right: 0;
+}
+
+.edit {
+  top: 40px;
   right: 0;
 }
